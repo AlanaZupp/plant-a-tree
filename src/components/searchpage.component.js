@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "./searchpage.css";
 
 //array of json tree objects
-import {trees} from "./treeSelect.js";
+import {trees} from "./tree.js";
 var results;
 
 //class that creates and holds the form for filtering between tree types upon search
