@@ -7,10 +7,11 @@ import fernpic from "./treePics/fern.png";
 import nopic from "./treePics/NO_IMAGE.png";
 
 class Tree extends React.Component {
-    constructor(name, category,soil,sun,mainten,height,growth,image) {
+    constructor(name, price, category, soil, sun, mainten, height, growth, image) {
         super();
         this.state = {
             name:name,
+            price:price,
             category:category, 
             soilCon:soil,
             sunCon:sun,
@@ -28,15 +29,15 @@ class Tree extends React.Component {
     }
 }
 
-var oak = new Tree("Oak Tree", "hardwood", "medDrain", "sunny", "lowMain", "<1", "fastR", oakpic);
+var oak = new Tree("Oak Tree", 150, "hardwood", "medDrain", "sunny", "lowMain", "<1", "fastR", oakpic);
 
-var spruce = new Tree("Spruce Tree", "hardwood", "slow", "shade", "medMain", "2-3", "medR", sprucepic);
+var spruce = new Tree("Spruce Tree", 200, "hardwood", "slow", "shade", "medMain", "2-3", "medR", sprucepic);
 
-var jungle = new Tree("Jungle Tree", "hardwood", "fast", "medSun", "highMain", ">3", "slowR", junglepic);
+var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "medSun", "highMain", ">3", "slowR", junglepic);
 
-var apple = new Tree("Apple Tree", "fruit", "medDrain", "sunny", "medMain", "1-2", "medR", applepic);
+var apple = new Tree("Apple Tree", 150, "fruit", "medDrain", "sunny", "medMain", "1-2", "medR", applepic);
 
-var fern = new Tree("Fern Tree", "native", "medDrain", "shade", "lowMain", "1", "fastR", fernpic);
+var fern = new Tree("Fern Tree", 100, "native", "medDrain", "shade", "lowMain", "1", "fastR", fernpic);
 
 var trees = [oak, spruce, jungle, apple,fern];
 export {trees}
