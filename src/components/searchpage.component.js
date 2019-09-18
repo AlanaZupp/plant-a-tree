@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "./searchpage.css";
 
 //array of json tree objects
-import {trees} from "./treeSelect.js";
+import {trees} from "./tree.js";
 var results;
 
 //class that creates and holds the form for filtering between tree types upon search
@@ -113,28 +113,28 @@ export default class SearchPage extends Component{
         for(var i = 0; i<trees.length;i++ )
         {
             //a really bad if statment chunk to display filtered options can work through later
-            if((document.getElementById('categoryF').category.value===trees[i].category||
+            if((document.getElementById('categoryF').category.value===trees[i].state.category||
             document.getElementById('categoryF').category.value==="none")&&
-            (document.getElementById('soilConF').soilCon.value===(trees[i].soilCon)||
+            (document.getElementById('soilConF').soilCon.value===(trees[i].state.soilCon)||
             document.getElementById('soilConF').soilCon.value==="none")&&
-            (document.getElementById('sunConF').sunCon.value===trees[i].sunCon||
+            (document.getElementById('sunConF').sunCon.value===trees[i].state.sunCon||
             document.getElementById('sunConF').sunCon.value==="none")&&
-            (document.getElementById('maintenF').mainten.value===trees[i].mainten||
+            (document.getElementById('maintenF').mainten.value===trees[i].state.mainten||
             document.getElementById('maintenF').mainten.value==="none")&&
-            (document.getElementById('heightF').heightV.value===trees[i].heightV||
+            (document.getElementById('heightF').heightV.value===trees[i].state.heightV||
             document.getElementById('heightF').heightV.value==="none")&&
-            (document.getElementById('growthF').gRate.value===trees[i].gRate||
+            (document.getElementById('growthF').gRate.value===trees[i].state.gRate||
             document.getElementById('growthF').gRate.value==="none"))
             {
                 //make a long string holding search results
                 console.log("hit");
-                results+=trees[i].name+" <img src='"+trees[i].pic+"'/><br/>";
+                results+=trees[i].state.name+" <img src='"+trees[i].state.pic+"'/><br/>";
             }
         }
         if(results!=="")
         {
             //change result paragraph to show the list of trees
-            document.getElementById('result').innerHTML="The Result was: "+results;
+            document.getElementById('result').innerHTML="The Result was: <br/>"+results;
         }
         else
         {
