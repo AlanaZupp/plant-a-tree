@@ -19,130 +19,96 @@ export default class SearchPage extends Component{
                     </div>
                 </div>
                 <div className="options">
-                    <p>Category</p><br/>
-                    <form id="categoryF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="category" value="none" defaultChecked/>
-                        <label>Fruit Tree</label>
-                        <input type="radio" name="category" value="fruit" />
-                        <label>Hedge</label>
-                        <input type="radio" name="category" value="hedge"/>
-                        <label>Evergreen</label>
-                        <input type="radio" name="category" value="evergreen"/>
-                        <label>Nz Native</label>
-                        <input type="radio" name="category" value="native"/>
-                        <label>Gum Tree</label>
-                        <input type="radio" name="category" value="gum"/>
-                        <label>Palm Tree</label>
-                        <input type="radio" name="category" value="palm"/>
-                        <label>Hardwood</label>
-                        <input type="radio" name="category" value="hardwood"/>
-                    </form><br/>
-                    <p>Conditions</p><br/><br/>
-                    <p className="subtitle">Soil Drainage</p>
-                    <form id="soilConF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="soilCon" value="none" defaultChecked/>
-                        <label>Fast</label>
-                        <input type="radio" name="soilCon" value="fast"/>
-                        <label>Med</label>
-                        <input type="radio" name="soilCon" value="medDrain"/>
-                        <label>Slow</label>
-                        <input type="radio" name="soilCon" value="slow"/>
-                        <label>Any</label>
-                        <input type="radio" name="soilCon" value="anyDrain"/>
-                    </form>
-                    <br/><p className="subtitle">Sunlight</p>
-                    <form id="sunConF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="sunCon" value="none" defaultChecked/>
-                        <label>Sunny</label>
-                        <input type="radio" name="sunCon" value="sunny"/>
-                        <label>Medium</label>
-                        <input type="radio" name="sunCon" value="medSun"/>
-                        <label>Shady</label>
-                        <input type="radio" name="sunCon" value="shade"/>
-                        <label>Any</label>
-                        <input type="radio" name="sunCon" value="anySun"/>
-                    </form><br/>
-                    <p>Maintenance</p><br/>
-                    <form id="maintenF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="mainten" value="none" defaultChecked/>
-                        <label>High</label>
-                        <input type="radio"  name="mainten" value="highMain"/>
-                        <label>Medium</label>
-                        <input type="radio"  name="mainten" value="medMain"/>
-                        <label>Low</label>
-                        <input type="radio"  name="mainten" value="lowMain"/>
-                    </form>
-                    <p>Max Tree Height</p><br/>
-                    <form id="heightF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="heightV" value="none" defaultChecked/>
-                        <label>Less than 1M</label>
-                        <input type="radio"  name="heightV" value="<1"/>
-                        <label>1-2M</label>
-                        <input type="radio"  name="heightV" value="1-2"/>
-                        <label>2-3M</label>
-                        <input type="radio"  name="heightV" value="2-3"/>
-                        <label>Greater than 3M</label>
-                        <input type="radio"  name="heightV" value=">3"/>
-                    </form>
-                    <p>Growth Rate</p><br/><br/>
-                    <form id="growthF">
-                        <label>Unchecked</label>
-                        <input type="radio" name="gRate" value="none" defaultChecked/>
-                        <label>Fast</label>
-                        <input type="radio" name="gRate" value="fastR"/>
-                        <label>Medium</label>
-                        <input type="radio" name="gRate" value="medR"/>
-                        <label>Slow</label>
-                        <input type="radio" name="gRate" value="slowR"/>
-                    </form><br/><br/>
-                    <button type="button" onClick={this.check}>Submit</button><br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Category</option>
+                        <option value="fruit">Fruit Tree</option>
+                        <option value="hedge">Hedge</option>
+                        <option value="evergreen">Evergreen</option>
+                        <option value="native">NZ Native</option>
+                        <option value="gum">Gum Tree</option>
+                        <option value="palm">Palm Tree</option>
+                        <option value="hardwood">Hardwood</option>
+                    </select>
+                    <br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Soil Drainage</option>
+                        <option value="fast">Fast</option>
+                        <option value="medium">Medium</option>
+                        <option value="slow">Slow</option>
+                    </select>
+                    <br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Sun Options</option>
+                        <option value="fruit">Sunny</option>
+                        <option value="hedge">Medium</option>
+                        <option value="evergreen">Shady</option>
+                    </select>
+                    <br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Maintenance</option>
+                        <option value="fruit">High</option>
+                        <option value="hedge">Medium</option>
+                        <option value="evergreen">Low</option>
+                    </select>
+                    <br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Height</option>
+                        <option value="fruit">Less than 1M</option>
+                        <option value="hedge">1-2M</option>
+                        <option value="evergreen">2-3M</option>
+                        <option value="">Greater than 3M</option>
+                    </select>
+                    <br/><br/>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Growth Rate</option>
+                        <option value="fruit">Fast</option>
+                        <option value="hedge">Medium</option>
+                        <option value="evergreen">Slow</option>
+                    </select>
+                   <br/><br/>
+                    <button type="button" id="subButt" onClick={this.check}>Submit</button><br/><br/>
                     <p id="result"></p><br/>
                 </div>
             </div>
         )
     }
 
-    //check function for filter options
-    check(){
-        results ="";
-        for(var i = 0; i<trees.length;i++ )
-        {
-            //a really bad if statment chunk to display filtered options can work through later
-            if((document.getElementById('categoryF').category.value===trees[i].state.category||
-            document.getElementById('categoryF').category.value==="none")&&
-            (document.getElementById('soilConF').soilCon.value===(trees[i].state.soilCon)||
-            document.getElementById('soilConF').soilCon.value==="none")&&
-            (document.getElementById('sunConF').sunCon.value===trees[i].state.sunCon||
-            document.getElementById('sunConF').sunCon.value==="none")&&
-            (document.getElementById('maintenF').mainten.value===trees[i].state.mainten||
-            document.getElementById('maintenF').mainten.value==="none")&&
-            (document.getElementById('heightF').heightV.value===trees[i].state.heightV||
-            document.getElementById('heightF').heightV.value==="none")&&
-            (document.getElementById('growthF').gRate.value===trees[i].state.gRate||
-            document.getElementById('growthF').gRate.value==="none"))
-            {
-                //make a long string holding search results
-                console.log("hit");
-                results+=trees[i].result_string() + "<br/>";
-            }
-        }
-        if(results!=="")
-        {
-            //change result paragraph to show the list of trees
-            document.getElementById('result').innerHTML="The Result was: <br/>"+results;
-        }
-        else
-        {
-            // this is within the for loop
-            document.getElementById('result').innerHTML="The Results show nothing";
-        }
-    }
+    // //check function for filter options
+    // check(){
+    //     results ="";
+    //     for(var i = 0; i<trees.length;i++ )
+    //     {
+    //         //a really bad if statment chunk to display filtered options can work through later
+    //         if((document.getElementById('categoryF').category.value===trees[i].category||
+    //         document.getElementById('categoryF').category.value==="none")&&
+    //         (document.getElementById('soilConF').soilCon.value===(trees[i].soilCon)||
+    //         document.getElementById('soilConF').soilCon.value==="none")&&
+    //         (document.getElementById('sunConF').sunCon.value===trees[i].sunCon||
+    //         document.getElementById('sunConF').sunCon.value==="none")&&
+    //         (document.getElementById('maintenF').mainten.value===trees[i].mainten||
+    //         document.getElementById('maintenF').mainten.value==="none")&&
+    //         (document.getElementById('heightF').heightV.value===trees[i].heightV||
+    //         document.getElementById('heightF').heightV.value==="none")&&
+    //         (document.getElementById('growthF').gRate.value===trees[i].gRate||
+    //         document.getElementById('growthF').gRate.value==="none"))
+    //         {
+    //             //make a long string holding search results
+    //             console.log("hit");
+    //             results+=trees[i].name+" <img src='"+trees[i].pic+"'/><br/>";
+    //         }
+    //     }
+    //     if(results!=="")
+    //     {
+    //         //change result paragraph to show the list of trees
+    //         document.getElementById('result').innerHTML="The Result was: "+results;
+    //     }
+    //     else
+    //     {
+    //         // this is within the for loop
+    //         document.getElementById('result').innerHTML="The Results show nothing";
+    //     }
+    // }
 
-    //blank search function
-    searchRes(){}
+    // //blank search function
+    // searchRes(){}
 }
