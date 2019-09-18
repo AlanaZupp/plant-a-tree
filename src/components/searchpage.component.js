@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SearchBox from "./SearchBox.component";
 import "./searchpage.css";
 
 //array of json tree objects
@@ -12,10 +13,8 @@ export default class SearchPage extends Component{
         return(
             <div className="fullPage">
                 <div className="searchBar">
-                    <p>Find the tree(s) you're looking for...</p>
                     <div className="search">
-                        <input type="text" placeholder="Search.." id="searchBox"></input>
-                        <button type="button" onClick={this.searchRes}>Search</button><br/><br/>
+                        <SearchBox searchRes={this.searchRes}/>
                     </div>
                 </div>
                 <div className="options">
@@ -109,6 +108,27 @@ export default class SearchPage extends Component{
     //     }
     // }
 
-    // //blank search function
-    // searchRes(){}
+    searchRes(value) {
+        results = "";
+
+        for (var i = 0; i<trees.length; i++) {
+            if (trees[i].state.name.toLowerCase().includes(value.toLowerCase()) || trees[i].state.category.toLowerCase().includes(value.toLowerCase()))
+            {
+                results += trees[i].result_string();
+                if (i < trees.length + 1)
+                {
+                    results += "<br/>";
+                }
+            }
+        }
+
+        if(results!=="") {
+            //change result paragraph to show the list of trees
+            document.getElementById('result').innerHTML="The Result was: <br/>"+results;
+        }
+        else {
+            // this is within the for loop
+            document.getElementById('result').innerHTML="The Results show nothing";
+        }
+    }
 }

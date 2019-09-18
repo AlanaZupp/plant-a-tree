@@ -23,7 +23,7 @@ class Tree extends React.Component {
 
     result_string()
     {
-        var string = this.state.name + " <img src='"+this.state.pic+"'/>";
+        var string = this.state.name + " <br/><img src='"+this.state.pic+"'/>";
         return string;
     }
 }
