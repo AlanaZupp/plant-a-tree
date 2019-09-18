@@ -128,7 +128,7 @@ export default class SearchPage extends Component{
             {
                 //make a long string holding search results
                 console.log("hit");
-                results+=trees[i].state.name+" <img src='"+trees[i].state.pic+"'/><br/>";
+                results+=trees[i].result_string() + "<br/>";
             }
         }
         if(results!=="")
