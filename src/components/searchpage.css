@@ -8,7 +8,6 @@
 }
 .search {
     float: right;
-
 }
 
 p{
@@ -17,14 +16,36 @@ p{
     color: black;
 }
 
+.fullpage{
+    overflow:hidden;
+}
+
 .options{
     width: 25%;
-    padding-left: 15px;
-    padding-top: 15px;
+    float: left;
+    margin-left: 3%;
+    margin-top: 3%;
     color: black;
 }
 
 .options button{
     background-color: rgb(204, 255, 128);
     margin-left: 33%;
+}
+
+.resultChunk{
+    overflow: hidden;
+    margin-top: 5%;
+    margin-left: 40%;
+}
+.result{
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.resultSec{
+    overflow: hidden;
+    margin-top: 5%;
+    margin-left:45%;
 }
