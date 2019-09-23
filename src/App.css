@@ -3,9 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-  pointer-events: none;
 }
 
 .App-header {
@@ -20,14 +18,22 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #09d3ac;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Body {
+  min-height: 90vh;
+}
+
+.Footer {
+  background-color: #383c46;
+  color: white;
+}
+
+.current {
+  color: red;
+}
+
+NavLink {
+  color: green;
 }
