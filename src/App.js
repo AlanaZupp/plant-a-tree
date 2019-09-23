@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <div className="Nav">
               <Navbar bg="dark" variant="dark" expand="md">
-                <Navbar.Brand><NavLink className="navbar-brand" to="/">LOGO</NavLink></Navbar.Brand>
+                <Navbar.Brand><NavLink className="navbar-brand" to="/">PlantATree</NavLink></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic=navbar-nav">
                   <Nav variant="pills" className="mr-auto">
