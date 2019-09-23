@@ -2,9 +2,14 @@
     float: left;
     width: 33.33%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px;
+
   }
 
-   {
+  .treecol {
+    float: left;
+    width: 27%;
+    padding: 10px;
+    height: 250px;
 
   }

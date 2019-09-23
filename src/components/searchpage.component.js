@@ -46,7 +46,7 @@ export default class SearchPage extends Component{
                     <select class="custom-select custom-select-sm" id="sMain">
                         <option selected value="none">Maintenance</option>
                         <option value="highMain">High</option>
-                        <option value="mediumMain">Medium</option>
+                        <option value="medMain">Medium</option>
                         <option value="lowMain">Low</option>
                     </select>
                     <br/><br/>
