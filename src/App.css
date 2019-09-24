@@ -28,12 +28,42 @@
 .Footer {
   background-color: #383c46;
   color: white;
+  padding-right: 1vw;
 }
 
 .current {
   color: red;
 }
 
-NavLink {
-  color: green;
+/*Seach Page*/
+
+.searchBar{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left:1%;
+    padding-right: 1%;
+    height: 50px;
+    background-color: rgb(204, 255, 128);
+}
+.search {
+    float: right;
+
+}
+
+p{
+    float: left;
+    font-size: 16px;
+    color: black;
+}
+
+.options{
+    width: 25%;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: black;
+}
+
+.options button{
+    background-color: rgb(204, 255, 128);
+    margin-left: 33%;
 }

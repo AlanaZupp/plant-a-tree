@@ -22,18 +22,25 @@ class App extends Component {
                 <Navbar.Brand><NavLink className="navbar-brand" to="/">PlantATree</NavLink></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic=navbar-nav">
-                  <Nav variant="pills" className="mr-auto">
+                  <Nav className="mr-auto">
                     <Nav.Item>
                       <Nav.Link><NavLink className="nav-link" to="/" exact activeClassName="current">Home</NavLink></Nav.Link>   
                     </Nav.Item>     
 
                     <Nav.Item>
-                      <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Search</NavLink></Nav.Link>   
+                      <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Store</NavLink></Nav.Link>   
                     </Nav.Item>    
 
                     <Nav.Item>
-                      <Nav.Link><NavLink className="nav-link" to="/buy" activeClassName="current">Shopping Cart</NavLink></Nav.Link>   
-                    </Nav.Item>            
+                      <Nav.Link>
+                        <NavLink className="nav-link" to="/buy" activeClassName="current">
+                          Shopping Cart
+                          <span> </span>
+                          <span class="badge badge-secondary">0</span>
+                        </NavLink>
+                      </Nav.Link>                        
+                    </Nav.Item>
+
                   </Nav>
                 </Navbar.Collapse>            
               </Navbar>        
@@ -47,7 +54,7 @@ class App extends Component {
         </Router>
 
         <div className="Footer">
-          <div className="footer-copyright text-center py-3">
+          <div className="footer-copyright text-right py-3">
               &copy; {new Date().getFullYear()} Copyright: Plant Wing Barn
           </div>
         </div>

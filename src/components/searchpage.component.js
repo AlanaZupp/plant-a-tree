@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import "./searchpage.css";
 
 //array of json tree objects
 import {trees} from "./tree.js";
