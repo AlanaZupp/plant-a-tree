@@ -6,6 +6,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 
 import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
@@ -20,6 +21,17 @@ class App extends Component {
           <div className="Nav">
               <Navbar bg="dark" variant="dark" expand="md">
                 <Navbar.Brand><NavLink className="navbar-brand" to="/">PlantATree</NavLink></Navbar.Brand>
+
+                <Nav.Item className="d-none d-sm-block d-md-none"> 
+                  <Nav.Link>
+                    <NavLink onClick={showCart}>
+                      Shopping Cart
+                      <span> </span>
+                      <span class="badge badge-secondary">0</span>
+                    </NavLink>
+                  </Nav.Link>                        
+                </Nav.Item>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic=navbar-nav">
                   <Nav className="mr-auto">
@@ -29,27 +41,48 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Store</NavLink></Nav.Link>   
-                    </Nav.Item>    
-
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink className="nav-link" to="/buy" activeClassName="current">
-                          Shopping Cart
-                          <span> </span>
-                          <span class="badge badge-secondary">0</span>
-                        </NavLink>
-                      </Nav.Link>                        
-                    </Nav.Item>
-
+                    </Nav.Item>         
                   </Nav>
-                </Navbar.Collapse>            
+                </Navbar.Collapse>    
+
+                <Nav.Item className="d-none d-md-block">
+                  <Nav.Link>
+                    <NavLink onClick={showCart}>
+                      Shopping Cart
+                      <span> </span>
+                      <span class="badge badge-secondary">0</span>
+                    </NavLink>
+                  </Nav.Link>                            
+                </Nav.Item>      
               </Navbar>        
+          </div>
+
+          <div id="ShoppingCart"> 
+            <div className="cartContentPanel">             
+              <div className="cartHeading">
+                  <h4>Shopping Cart</h4>
+              </div>
+
+              <div className="cartPurchasedItems">
+
+              </div>
+          
+              <div className="cartPrice">
+                  <h6>Total: $10.00</h6>
+              </div>
+
+              <div className="cartButtonDiv">
+                  <Button bg="dark" variant="dark" onClick={showCart}><NavLink>Clear Cart</NavLink></Button>
+                  <span> </span>
+                  <Button bg="dark" variant="dark"  onClick={showCart}><NavLink to="/buy">Purchase</NavLink></Button>
+              </div>
+            </div>
           </div>
 
           <div className="Body">
             <Route path="/" exact component={HomePage}/>
             <Route path="/search" component={SearchPage}/>
-            <Route path="/buy" component={BuyPage}/>  
+            <Route path="/buy" component={BuyPage}/>   
           </div>            
         </Router>
 
@@ -59,8 +92,15 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    );  
   }
 }
 
   export default App;
+
+  function showCart() {
+    var node = document.getElementById('ShoppingCart');
+    var visibility = node.style.visibility;
+    node.style.visibility = visibility == "visible" ? 'hidden' : "visible";
+  }
+  

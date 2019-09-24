@@ -31,8 +31,39 @@
   padding-right: 1vw;
 }
 
-.current {
-  color: red;
+.cartContentPanel {
+  background-color: #7d8494;
+
+  position: relative;
+  text-align: center;
+  
+  width: 300px;
+  min-height:390px;
+
+  /* bottom: -10px; */
+  right: -10px;
+}
+
+.cartPurchasedItems {
+  background-color: whitesmoke;
+  position: relative;
+  
+  width: 290px;
+  min-height: 275px;
+
+  left: 5px;
+}
+
+#ShoppingCart {
+  background-color: #383c46;
+  
+  visibility: hidden;
+  position: absolute;
+
+  width: 320px;
+  min-height:400px;
+
+  right: 0;
 }
 
 /*Seach Page*/
