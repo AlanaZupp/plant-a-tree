@@ -11,17 +11,33 @@ import Button from 'react-bootstrap/Button';
 import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
 import BuyPage from "./components/buypage.component";
-
+import ShoppingCart from './components/shoppingcart.component';
 
 class App extends Component {
   render(){
     return (
-      <div className="fullpage">      
+      <div className="fullpage">   
         <Router>
           <div className="Nav">
               <Navbar bg="dark" variant="dark" expand="md">
                 <Navbar.Brand><NavLink className="navbar-brand" to="/">PlantATree</NavLink></Navbar.Brand>
 
+                {
+                  //For Extra Small Screens
+                }
+                <Nav.Item className="d-sm-none"> 
+                  <Nav.Link>
+                    <NavLink onClick={showCart}>
+                      Shopping Cart
+                      <span> </span>
+                      <span class="badge badge-secondary">0</span>
+                    </NavLink>
+                  </Nav.Link>                        
+                </Nav.Item>
+
+                {
+                  //For Small
+                }
                 <Nav.Item className="d-none d-sm-block d-md-none"> 
                   <Nav.Link>
                     <NavLink onClick={showCart}>
@@ -45,6 +61,9 @@ class App extends Component {
                   </Nav>
                 </Navbar.Collapse>    
 
+                {
+                  //For Medium Screens and Up                  
+                }
                 <Nav.Item className="d-none d-md-block">
                   <Nav.Link>
                     <NavLink onClick={showCart}>
@@ -63,12 +82,35 @@ class App extends Component {
                   <h4>Shopping Cart</h4>
               </div>
 
-              <div className="cartPurchasedItems">
+              <div className="ShoppingCartObj">
+                <div className="cartPurchasedItems">
 
-              </div>
-          
-              <div className="cartPrice">
-                  <h6>Total: $10.00</h6>
+                  <div className="cart-item d-flex justify-content-between">
+                    <img src="#"/>
+
+                    <p>Item Name</p>
+                    <div>
+                      <span>$</span>
+                      <span>10.00</span>
+                    </div>
+                  </div>
+
+                  
+                  <div className="cart-item d-flex justify-content-between">
+                    <img src="#"/>
+
+                    <p>Item2</p>
+                    <div>
+                      <span>$</span>
+                      <span>50.00</span>
+                    </div>
+                  </div>
+
+                </div>
+                <div className="totalPrice">
+                    <h6>Total: $0.00</h6>
+                </div>
+
               </div>
 
               <div className="cartButtonDiv">
@@ -95,12 +137,12 @@ class App extends Component {
     );  
   }
 }
-
   export default App;
 
   function showCart() {
     var node = document.getElementById('ShoppingCart');
     var visibility = node.style.visibility;
     node.style.visibility = visibility == "visible" ? 'hidden' : "visible";
-  }
-  
+  } 
+
+
