@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
 import BuyPage from "./components/buypage.component";
+import TreeInfoPage from "./components/treeinfopage.component";
 
 class App extends Component {
   render(){
@@ -24,12 +25,16 @@ class App extends Component {
                 <li className="navbar-item">
                   <Link to="/buy" className="nav-link">Buy</Link>
                 </li>
+                <li className="navbar-item">
+                  <Link to="/treeinfo" className="nav-link">Tree Information</Link>
+                </li>
               </ul>
             </div>
           </nav>
         <Route path="/" exact component={HomePage}/>
         <Route path="/search" component={SearchPage}/>
         <Route path="/buy" component={BuyPage}/>
+        <Route path="/treeinfo" component={TreeInfoPage}/>
         </div>
       </Router>
     );
