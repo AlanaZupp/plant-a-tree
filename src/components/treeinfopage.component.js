@@ -8,14 +8,8 @@ export default class TreeInfo extends Component{
         return(
             <div className="fullPage">
             <div className="searchBar">
-                <p>Tree Info Page...</p>
+                <p>Tree Facts</p>
             </div>
-
-            {/* this is for aligning the pictures at the top of the page
-             <div className="treeimg">
-                
-                
-            </div> */}
 
             <div className="treeList" id="treeList">
                 <br></br>
@@ -26,7 +20,7 @@ export default class TreeInfo extends Component{
                 }
             </div>
 
-            {/* select options to restrict the tree you wanna see */}
+            {/* select options to restrict the tree you wanna see 
             <div className ="options">
                 <select className="custom-select" id="treeselect">
                             <option selected value="none">Category</option>
@@ -41,8 +35,8 @@ export default class TreeInfo extends Component{
                             <option value="spruce">Spruce Tree</option>
                             <option value="gum">Gum Tree</option>
                         </select>
-                <br></br><button type = "button" onClick="">Choose Tree</button> {/* make a function to check this and display only that tree */}
-            </div>
+                <br></br><button type = "button" onClick="">Choose Tree</button> 
+            </div>*/}
 
             </div>
         )

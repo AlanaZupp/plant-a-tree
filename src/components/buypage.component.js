@@ -5,7 +5,7 @@ export default class BuyPage extends Component{
         return(
             <div className="fullPage">
             <div className="searchBar">
-                <p>Buy Page...</p>
+                <p>Store</p>
             </div>
             </div>
         )

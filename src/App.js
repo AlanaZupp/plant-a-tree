@@ -23,10 +23,10 @@ class App extends Component {
                   <Link to="/search" className="nav-link">Search</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/buy" className="nav-link">Buy</Link>
+                  <Link to="/buy" className="nav-link">Store</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/treeinfo" className="nav-link">Tree Information</Link>
+                  <Link to="/treeinfo" className="nav-link">Tree Facts</Link>
                 </li>
               </ul>
             </div>
