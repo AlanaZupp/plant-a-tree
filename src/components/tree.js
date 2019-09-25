@@ -10,7 +10,7 @@ import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
 
-class Tree extends React.Component {
+export default class Tree extends React.Component {
     constructor(name, price, category, soil, sun, mainten, height, growth, image) {
         super();
         this.state = {
@@ -31,15 +31,7 @@ class Tree extends React.Component {
         var string = this.state.name + " <br/><img src='"+this.state.pic+"'/>";
         return string;
     }
-    /*
-<div className="treecol">
-                <h3>BIRCH TREE</h3>
-                <p><b>Category:</b> Hardwood <br></br><b>Soil Drainage: </b>Medium<br></br><b>Sun Options:</b> Medium<br></br>
-                <b>Maintenance:</b> Low<br></br><b>Max height:</b>1-2M<br></br><b>Growth Rate:</b> Medium<br></br><b>Price: </b>$65</p>
-                <img src = {birch} alt=" " width="75" height="75"/>
 
-            </div>
-            */
     info_string()
     {
         var string = "";
@@ -50,10 +42,31 @@ class Tree extends React.Component {
         "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
         "<b>Max Height:</b> " + this.state.heightV + "</br>" +
         "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
-        "<b>Price:</b> $" + this.state.price + "</br>" +
-        " <img src='"+this.state.pic+"'/>";
+        "<b>Price:</b> $" + this.state.price + "</br></p>" +
+        "<img src='"+this.state.pic+"' alt=' ' width='75' height='75'/>";
         return string;
     }
+
+    
+    render() {
+        return(
+            <div className="treecol">
+                <h3>{this.state.name}</h3>
+                <p>
+                    <b>Category:</b> {this.state.category}<br></br>
+                    <b>Soil Drainage: </b>{this.state.soilCon}<br></br>
+                    <b>Sun Options:</b> {this.state.sunCon}<br></br>
+                    <b>Maintenance:</b> {this.state.mainten}<br></br>
+                    <b>Max height:</b>{this.state.heightV}<br></br>
+                    <b>Growth Rate:</b>{this.state.gRate}<br></br>
+                    <b>Price: </b>${this.state.price}
+                </p>
+                <img src = {this.state.pic} alt=" " width="75" height="75"/>
+            </div>
+        )
+    }
+    
+    
 }
 
 var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "lowMain", "<1", "fastR", oakpic);
