@@ -10,7 +10,7 @@ import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
 
-class Tree extends React.Component {
+export default class Tree extends React.Component {
     constructor(name, price, category, soil, sun, mainten, height, growth, image) {
         super();
         this.state = {
@@ -28,18 +28,18 @@ class Tree extends React.Component {
 
     result_string()
     {
-        var string = this.state.name + " <br/><img src='"+this.state.pic+"'/>";
+        var string = "<u><b>"+this.state.name+"</b></u><br/>"+
+        "<b>Category: </b>"+this.state.category+
+        "<br/><b>Soil Drainage: </b>"+this.state.soilCon+
+        "<br/><b>Sun Options: </b>"+this.state.sunCon+
+        "<br/><b>Maintenance: </b>"+this.state.mainten+
+        "<br/><b>Max height: </b>"+this.state.heightV+
+        "<br/><b>Growth Rate: </b>"+this.state.gRate+
+        "<br/><b>Price: $</b>"+this.state.price+
+        "<br/><img src='"+this.state.pic+"'/>";
         return string;
     }
-    /*
-<div className="treecol">
-                <h3>BIRCH TREE</h3>
-                <p><b>Category:</b> Hardwood <br></br><b>Soil Drainage: </b>Medium<br></br><b>Sun Options:</b> Medium<br></br>
-                <b>Maintenance:</b> Low<br></br><b>Max height:</b>1-2M<br></br><b>Growth Rate:</b> Medium<br></br><b>Price: </b>$65</p>
-                <img src = {birch} alt=" " width="75" height="75"/>
 
-            </div>
-            */
     info_string()
     {
         var string = "";
@@ -50,31 +50,52 @@ class Tree extends React.Component {
         "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
         "<b>Max Height:</b> " + this.state.heightV + "</br>" +
         "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
-        "<b>Price:</b> $" + this.state.price + "</br>" +
-        " <img src='"+this.state.pic+"'/>";
+        "<b>Price:</b> $" + this.state.price + "</br></p>" +
+        "<img src='"+this.state.pic+"' alt=' ' width='75' height='75'/>";
         return string;
     }
+
+    
+    render() {
+        return(
+            <div className="treecol">
+                <h3>{this.state.name}</h3>
+                <p>
+                    <b>Category:</b> {this.state.category}<br></br>
+                    <b>Soil Drainage: </b>{this.state.soilCon}<br></br>
+                    <b>Sun Options:</b> {this.state.sunCon}<br></br>
+                    <b>Maintenance:</b> {this.state.mainten}<br></br>
+                    <b>Max height:</b>{this.state.heightV}<br></br>
+                    <b>Growth Rate:</b>{this.state.gRate}<br></br>
+                    <b>Price: </b>${this.state.price}
+                </p>
+                <img src = {this.state.pic} alt=" " width="75" height="75"/>
+            </div>
+        )
+    }
+    
+    
 }
 
-var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "lowMain", "<1", "fastR", oakpic);
+var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "low", "<1", "fast", oakpic);
 
-var spruce = new Tree("Spruce Tree", 200, "evergreen", "slow", "shade", "medMain", "2-3", "medR", sprucepic);
+var spruce = new Tree("Spruce Tree", 200, "evergreen", "slow", "shade", "med", "2-3", "med", sprucepic);
 
-var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "medSun", "highMain", ">3", "slowR", junglepic);
+var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "med", "high", ">3", "slow", junglepic);
 
-var apple = new Tree("Apple Tree", 150, "fruit", "med", "sunny", "medMain", "1-2", "medR", applepic);
+var apple = new Tree("Apple Tree", 150, "fruit", "med", "sunny", "med", "1-2", "med", applepic);
 
-var fern = new Tree("Fern Tree", 100, "native", "med", "shade", "lowMain", "1", "fastR", fernpic);
+var fern = new Tree("Fern Tree", 100, "native", "med", "shade", "low", "1", "fast", fernpic);
 
-var accacia = new Tree("Accacia Tree", 100, "palm", "fast", "sunny", "medMain", "2-3", "fastR", acaciaPic);
+var accacia = new Tree("Accacia Tree", 100, "palm", "fast", "sunny", "med", "2-3", "fast", acaciaPic);
 
-var birch = new Tree("Birch Tree", 100, "hardwood", "med", "medSun", "highMain", "2-3", "slowR", birchPic);
+var birch = new Tree("Birch Tree", 100, "hardwood", "med", "med", "high", "2-3", "slow", birchPic);
 
-var darkOak = new Tree("Dark Oak Tree", 500, "hardwood", "med", "shade", "medMain", "2-3", "slow", darkOakPic);
+var darkOak = new Tree("Dark Oak Tree", 500, "hardwood", "med", "shade", "med", "2-3", "slow", darkOakPic);
 
-var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "lowMain", "1-2", "slowR", hedgePic);
+var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "low", "1-2", "slow", hedgePic);
 
-var gum = new Tree("Gum Tree", 100, "gum", "fast", "medSun", "medMain", ">3", "fastR", nopic);
+var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", nopic);
 
 var trees = [oak, spruce, jungle, apple, fern, accacia, birch, darkOak, hedge, gum];
 export {trees}
