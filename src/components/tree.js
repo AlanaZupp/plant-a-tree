@@ -28,7 +28,7 @@ class Tree extends React.Component {
 
     result_string()
     {
-        var string = this.state.name + " <img src='"+this.state.pic+"'/>";
+        var string = this.state.name + " <br/><img src='"+this.state.pic+"'/>";
         return string;
     }
     /*
@@ -58,7 +58,7 @@ class Tree extends React.Component {
 
 var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "lowMain", "<1", "fastR", oakpic);
 
-var spruce = new Tree("Spruce Tree", 200, "hardwood", "slow", "shade", "medMain", "2-3", "medR", sprucepic);
+var spruce = new Tree("Spruce Tree", 200, "evergreen", "slow", "shade", "medMain", "2-3", "medR", sprucepic);
 
 var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "medSun", "highMain", ">3", "slowR", junglepic);
 
@@ -76,5 +76,5 @@ var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "lowMain", "1-2
 
 var gum = new Tree("Gum Tree", 100, "gum", "fast", "medSun", "medMain", ">3", "fastR", nopic);
 
-var trees = [oak, spruce, jungle, apple,fern, accacia, birch, darkOak, hedge, gum];
+var trees = [oak, spruce, jungle, apple, fern, accacia, birch, darkOak, hedge, gum];
 export {trees}
