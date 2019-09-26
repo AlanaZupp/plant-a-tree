@@ -1,0 +1,13 @@
+.column {
+    float: left;
+    width: 33%;
+    padding: 10px;
+    height: 200;
+  }
+
+  .treecol {
+    float: left;
+    width: 27%;
+    padding: 10px;
+    height: 250px;
+  }
