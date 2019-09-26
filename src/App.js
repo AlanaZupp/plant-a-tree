@@ -92,7 +92,7 @@ class App extends Component {
                 <div className="cartPurchasedItems">
 
                   <div className="cart-item d-flex justify-content-between">
-                    <img src="#"/>
+                    <img src="#" alt=""/>
 
                     <p>Item Name</p>
                     <div>
@@ -103,7 +103,7 @@ class App extends Component {
 
                   
                   <div className="cart-item d-flex justify-content-between">
-                    <img src="#"/>
+                    <img src="#" alt=""/>
 
                     <p>Item2</p>
                     <div>
@@ -149,7 +149,7 @@ class App extends Component {
   function showCart() {
     var node = document.getElementById('ShoppingCart');
     var visibility = node.style.visibility;
-    node.style.visibility = visibility == "visible" ? 'hidden' : "visible";
+    node.style.visibility = visibility === "visible" ? 'hidden' : "visible";
   } 
 
 

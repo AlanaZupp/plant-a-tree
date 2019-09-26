@@ -21,10 +21,9 @@ export default class HomePage extends Component{
         return(
             <div className="fullPage">
             <div className="searchBar">
-                <p>Home</p>
             </div>
             <div className = "photo">
-                   <img src = {farm} alt=" " width="1110" height="455" align = "right"/>
+                   <img src = {farm} alt=" " width="1110" height="455"/>
             </div>
             
             <div className = "column">
