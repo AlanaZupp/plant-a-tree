@@ -18,8 +18,8 @@ export default class SearchPage extends Component{
                     </div>
                 </div>
                 <div className="options">
-                    <select class="custom-select custom-select-sm" id="sCategory">
-                        <option selected value="none">Category</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sCategory">
+                        <option defaultValue value="none">Category</option>
                         <option value="fruit">Fruit Tree</option>
                         <option value="hedge">Hedge</option>
                         <option value="evergreen">Evergreen</option>
@@ -29,40 +29,40 @@ export default class SearchPage extends Component{
                         <option value="hardwood">Hardwood</option>
                     </select>
                     <br/><br/>
-                    <select class="custom-select custom-select-sm" id="sSoil">
-                        <option selected value="none">Soil Drainage</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sSoil">
+                        <option defaultValue value="none">Soil Drainage</option>
                         <option value="fast">Fast</option>
-                        <option value="medDrain">Medium</option>
+                        <option value="med">Medium</option>
                         <option value="slow">Slow</option>
                     </select>
                     <br/><br/>
-                    <select class="custom-select custom-select-sm" id="sSun">
-                        <option selected value="none">Sun Options</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sSun">
+                        <option defaultValue value="none">Sun Options</option>
                         <option value="sunny">Sunny</option>
-                        <option value="medSun">Medium</option>
+                        <option value="med">Medium</option>
                         <option value="shade">Shady</option>
                     </select>
                     <br/><br/>
-                    <select class="custom-select custom-select-sm" id="sMain">
-                        <option selected value="none">Maintenance</option>
-                        <option value="highMain">High</option>
-                        <option value="mediumMain">Medium</option>
-                        <option value="lowMain">Low</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sMain">
+                        <option defaultValue value="none">Maintenance</option>
+                        <option value="high">High</option>
+                        <option value="med">Medium</option>
+                        <option value="low">Low</option>
                     </select>
                     <br/><br/>
-                    <select class="custom-select custom-select-sm" id="sHeight">
-                        <option selected value="none">Height</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sHeight">
+                        <option defaultValue value="none">Height</option>
                         <option value="<1">Less than 1M</option>
                         <option value="1-2">1-2M</option>
                         <option value="2-3">2-3M</option>
                         <option value=">3">Greater than 3M</option>
                     </select>
                     <br/><br/>
-                    <select class="custom-select custom-select-sm" id="sGrow">
-                        <option selected value="none">Growth Rate</option>
-                        <option value="fastR">Fast</option>
-                        <option value="medR">Medium</option>
-                        <option value="slowR">Slow</option>
+                    <select className="custom-select custom-select-sm bg-light" id="sGrow">
+                        <option defaultValue value="none">Growth Rate</option>
+                        <option value="fast">Fast</option>
+                        <option value="med">Medium</option>
+                        <option value="slow">Slow</option>
                     </select>
                    <br/><br/>
                     <button type="button" id="subButt" onClick={this.check}>Submit</button><br/><br/>
@@ -123,7 +123,7 @@ export default class SearchPage extends Component{
         if(results!=="")
         {
             //change result paragraph to show the list of trees
-            document.getElementById('result').innerHTML="The Result was: <br/>"+results;
+            document.getElementById('result').innerHTML="<br/>"+results;
             if(resultsSec!=="")
             {
                 document.getElementById('resultSec').innerHTML="<br/>"+resultsSec; 
@@ -170,7 +170,7 @@ export default class SearchPage extends Component{
         if(results!=="")
         {
             //change result paragraph to show the list of trees
-            document.getElementById('result').innerHTML="The Result was: <br/>"+results;
+            document.getElementById('result').innerHTML="<br/>"+results;
             if(resultsSec!=="")
             {
                 document.getElementById('resultSec').innerHTML="<br/>"+resultsSec; 

@@ -12,6 +12,8 @@ import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
 import BuyPage from "./components/buypage.component";
 import ShoppingCart from './components/shoppingcart.component';
+import TreeInfoPage from "./components/treeinfopage.component";
+
 
 class App extends Component {
   render(){
@@ -57,7 +59,11 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Store</NavLink></Nav.Link>   
-                    </Nav.Item>         
+                    </Nav.Item>  
+          
+                    <Nav.Item>
+                      <Nav.Link><NavLink className="nav-link" to="/treeinfo" activeClassName="current">Tree Info</NavLink></Nav.Link>   
+                    </Nav.Item> 
                   </Nav>
                 </Navbar.Collapse>    
 
@@ -125,6 +131,7 @@ class App extends Component {
             <Route path="/" exact component={HomePage}/>
             <Route path="/search" component={SearchPage}/>
             <Route path="/buy" component={BuyPage}/>   
+            <Route path="/treeinfo" component={TreeInfoPage}/>
           </div>            
         </Router>
 
