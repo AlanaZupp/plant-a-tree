@@ -65,9 +65,6 @@ export default class HomePage extends Component{
                 <img src = {oak} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
                 <img src = {spruce} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
             </div>
-
-          
-         
             </div>
         )
     }

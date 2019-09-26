@@ -3,9 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-  pointer-events: none;
 }
 
 .App-header {
@@ -20,14 +18,114 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #09d3ac;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Body {
+  min-height: 90vh;
 }
+
+.Footer {
+  background-color: #383c46;
+  color: white;
+  padding-right: 1vw;
+}
+
+.cartContentPanel {
+  background-color: #7d8494;
+
+  position: relative;
+  text-align: center;
+  
+  width: 320px;
+  min-height:390px;
+
+  /* bottom: -10px; */
+  right: -10px;
+}
+
+.cartPurchasedItems {
+  background-color: whitesmoke;
+  position: relative;
+  
+  width: 310px;
+  min-height: 275px;
+
+  left: 5px;
+}
+
+#ShoppingCart {
+  background-color: #383c46;
+  
+  visibility: hidden;
+  position: absolute;
+
+  width: 340px;
+  min-height:400px;
+
+  right: 0;
+}
+
+.cart-item {
+  position: relative;
+  border:1px solid black;
+
+  top: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+/*Seach Page*/
+
+.searchBar{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left:1%;
+  padding-right: 1%;
+  height: 50px;
+  background-color: rgb(204, 255, 128);
+}
+.search {
+  float: right;
+}
+
+p{
+  float: left;
+  font-size: 16px;
+  color: black;
+}
+
+.fullpage{
+  overflow:hidden;
+}
+
+.options{
+  width: 25%;
+  float: left;
+  margin-left: 3%;
+  margin-top: 3%;
+  color: black;
+}
+
+.options button{
+  background-color: rgb(204, 255, 128);
+  margin-left: 33%;
+}
+
+.resultChunk{
+  overflow: hidden;
+  margin-top: 5%;
+  margin-left: 40%;
+}
+.result{
+  float: left;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.resultSec{
+  overflow: hidden;
+  margin-top: 5%;
+  margin-left:45%;
+}
+

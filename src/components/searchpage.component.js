@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+
 import SearchBox from "./SearchBox.component";
-import "./searchpage.css";
 
 //array of json tree objects
 import {trees} from "./tree.js";
