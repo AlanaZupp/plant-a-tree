@@ -1,4 +1,5 @@
 import React from 'react';
+
 import oakpic from "./treePics/oak.png";
 import sprucepic from "./treePics/spruce.png";
 import junglepic from "./treePics/jungle.png";
@@ -27,8 +28,9 @@ export default class Tree extends React.Component {
     }
 
     result_string()
-    {
-        var string = "<u><b>"+this.state.name+"</b></u><br/>"+
+    {        
+        var string = "<div className='TreeObj'>"+
+        "<u><b>"+this.state.name+"</b></u><br/>"+
         "<b>Category: </b>"+this.state.category+
         "<br/><b>Soil Drainage: </b>"+this.state.soilCon+
         "<br/><b>Sun Options: </b>"+this.state.sunCon+
@@ -36,7 +38,9 @@ export default class Tree extends React.Component {
         "<br/><b>Max height: </b>"+this.state.heightV+
         "<br/><b>Growth Rate: </b>"+this.state.gRate+
         "<br/><b>Price: $</b>"+this.state.price+
-        "<br/><img src='"+this.state.pic+"'/>";
+        "<br/><img src='"+this.state.pic+"'/><br/><br/>"+
+        "<button className='addBtn'>Add To Cart</button>"+
+        "</div>";
         return string;
     }
 
@@ -72,8 +76,7 @@ export default class Tree extends React.Component {
                 <img src = {this.state.pic} alt=" " width="75" height="75"/>
             </div>
         )
-    }
-    
+    }  
     
 }
 

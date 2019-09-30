@@ -8,7 +8,7 @@ var results, count, resultsSec;
 
 // class that creates and holds the form for filtering between tree types upon search
 // will return list of tree objects that meet the users criteria.
-export default class SearchPage extends Component{
+export default class SearchPage extends Component{ 
     render(){
         return(
             <div className="fullPage">
@@ -139,6 +139,7 @@ export default class SearchPage extends Component{
             document.getElementById('result').innerHTML="The Results show nothing";
             document.getElementById('resultSec').innerHTML=""; 
         }
+
     }
 
     searchRes(value) {
