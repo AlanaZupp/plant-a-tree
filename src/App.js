@@ -11,11 +11,9 @@ import Button from 'react-bootstrap/Button';
 import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
 import BuyPage from "./components/buypage.component";
-import ShoppingCart from './components/shoppingcart.component';
 import TreeInfoPage from "./components/treeinfopage.component";
 
-
-class App extends Component {
+class App extends Component {  
   render(){
     return (
       <div className="fullpage">   
@@ -151,5 +149,3 @@ class App extends Component {
     var visibility = node.style.visibility;
     node.style.visibility = visibility === "visible" ? 'hidden' : "visible";
   } 
-
-
