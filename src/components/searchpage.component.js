@@ -18,8 +18,9 @@ export default class SearchPage extends Component{
                     </div>
                 </div>
                 <div className="options">
+                    <h6>Tree Type</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sCategory">
-                        <option defaultValue value="none">Category</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="fruit">Fruit Tree</option>
                         <option value="hedge">Hedge</option>
                         <option value="evergreen">Evergreen</option>
@@ -29,37 +30,42 @@ export default class SearchPage extends Component{
                         <option value="hardwood">Hardwood</option>
                     </select>
                     <br/><br/>
+                    <h6>Soil Drainage</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sSoil">
-                        <option defaultValue value="none">Soil Drainage</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="fast">Fast</option>
                         <option value="med">Medium</option>
                         <option value="slow">Slow</option>
                     </select>
                     <br/><br/>
+                    <h6>Weather Options</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sSun">
-                        <option defaultValue value="none">Sun Options</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="sunny">Sunny</option>
                         <option value="med">Medium</option>
                         <option value="shade">Shady</option>
                     </select>
                     <br/><br/>
+                    <h6>Maintenance Level</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sMain">
-                        <option defaultValue value="none">Maintenance</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="high">High</option>
                         <option value="med">Medium</option>
                         <option value="low">Low</option>
                     </select>
                     <br/><br/>
+                    <h6>Tree Height</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sHeight">
-                        <option defaultValue value="none">Height</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="<1">Less than 1M</option>
                         <option value="1-2">1-2M</option>
                         <option value="2-3">2-3M</option>
                         <option value=">3">Greater than 3M</option>
                     </select>
                     <br/><br/>
+                    <h6>Growth Rate</h6>
                     <select className="custom-select custom-select-sm bg-light" id="sGrow">
-                        <option defaultValue value="none">Growth Rate</option>
+                        <option defaultValue value="none">--Select Option--</option>
                         <option value="fast">Fast</option>
                         <option value="med">Medium</option>
                         <option value="slow">Slow</option>
