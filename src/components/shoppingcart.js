@@ -65,7 +65,7 @@ export function removeItem() {
 }
 
 export function clearCart() {
-    const items = document.getElementByClassName("cart-item");
+    const items = document.getElementsByClassName("cart-item");
 
     for(var i = items.length - 1; i >= 0; i--)  //i-- as remove goes from largest number to smallest element. i.e. from element 4 then element 3 etc
     {            
@@ -76,17 +76,60 @@ export function clearCart() {
 
 
 //TODO: Load all Cart Items into
-export function loadPurchaseList(){
+export function generatePurchaseList(){
     const purchaseList = [];
-    const shoppingList = document.getElementsById("cart-item");
+    const shoppingList = document.getElementsByClassName("cart-item");
 
     for(var i = 0; i < shoppingList.length; i++) 
     {            
-        var purchaseItem = [];
-        console.log(shoppingList[i]);
+        var name = shoppingList[i].children[1].textContent;
+        var price = shoppingList[i].children[2].children[1].textContent;
+        var img = "#";  //TODO: Get Image URL
+
+        const purchaseItem = document.createElement("div");
+        purchaseItem.classList.add("purchaseItem");
         
+        purchaseItem.innerHTML =  
+        `
+            <img src="${img}"/>
+            <span>${name}</span>
+            <span>$</span>
+            <span class=purchasePrice>${price}</span>                
+        `;
+        purchaseList.push(purchaseItem);
     } 
+
+    loadPurchaseList.async(purchaseList);
+
+}
+
+function loadPurchaseList(purchaseList){
+
+    //Attach all Items to the PurchaseDivision
+    const cart = document.getElementById("purchaseItemList");
+    const total = document.querySelector("#purchaseTotalDiv");
+
+    for(var i = 0; i < purchaseList.length; i++)
+    {
+        cart.insertBefore(purchaseList[i], total);
+    }
+    //Get Total price
+    const prices = [];
+    const items = document.getElementsByClassName("purchasePrice");
+
+    for(var i = 0; i < items.length; i++)
+    {
+        prices.push(parseFloat(items[i].textContent));
+    }
+
+    const totalPrice = prices.reduce(function(prices, item) {
+        prices += item;
+        return prices;
+    }, 0); 
     
+    const finalPrice = totalPrice.toFixed(2);
+
+    document.getElementById("purchaseTotal").textContent = finalPrice;
 }
 
 function showTotals(){

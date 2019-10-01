@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import './App.css';
-import {clearCart} from './components/shoppingcart';
+import {clearCart, generatePurchaseList} from './components/shoppingcart';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from 'react-bootstrap/Navbar';
@@ -102,7 +102,7 @@ class App extends Component {
               <div className="cartButtonDiv">
                   <Button bg="dark" variant="dark" onClick={clearCart}><NavLink>Clear Cart</NavLink></Button>
                   <span> </span>
-                  <Button bg="dark" variant="dark"  onClick={showCart}><NavLink to="/buy">Purchase</NavLink></Button>
+                  <Button bg="dark" variant="dark"  onClick={generatePurchaseList}><NavLink to="/buy">Purchase</NavLink></Button>
               </div>
             </div>
           </div>
