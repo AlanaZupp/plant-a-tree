@@ -4,6 +4,7 @@ import SearchBox from "./SearchBox.component";
 
 //array of json tree objects
 import {trees} from "./tree.js";
+import {setEventListener} from './shoppingcart';
 var results, count, resultsSec;
 
 // class that creates and holds the form for filtering between tree types upon search
@@ -76,7 +77,7 @@ export default class SearchPage extends Component{
             </div>
         )
     }
-
+    
     //check function for filter options
     check(){
         results ="";
@@ -139,6 +140,7 @@ export default class SearchPage extends Component{
             document.getElementById('result').innerHTML="The Results show nothing";
             document.getElementById('resultSec').innerHTML=""; 
         }
+        setEventListener.async();
     }
 
     searchRes(value) {

@@ -1,5 +1,4 @@
 import React from 'react';
-import {addItem, yeet} from './shoppingcart';
 
 import oakpic from "./treePics/oak.png";
 import sprucepic from "./treePics/spruce.png";
@@ -30,7 +29,7 @@ export default class Tree extends React.Component {
 
     result_string()
     {        
-        var string = "<div className='TreeObj'>"+
+        var string = "<div class='TreeObj'>"+
         "<u><b>"+this.state.name+"</b></u><br/>"+
         "<b>Category: </b>"+this.state.category+
         "<br/><b>Soil Drainage: </b>"+this.state.soilCon+
@@ -38,9 +37,9 @@ export default class Tree extends React.Component {
         "<br/><b>Maintenance: </b>"+this.state.mainten+
         "<br/><b>Max height: </b>"+this.state.heightV+
         "<br/><b>Growth Rate: </b>"+this.state.gRate+
-        "<br/><b>Price: $</b>"+this.state.price+
+        "<br/><b>Price: $</b><span>"+this.state.price+"</span>"+    //Span Tags here cause it fucks up if it isn't
         "<br/><img src='"+this.state.pic+"'/><br/><br/>"+
-        "<button className='addBtn'>Add To Cart</button>"+
+        "<button class='cartButton'>Add To Cart</button>"+
         "</div>";
         return string;
     }

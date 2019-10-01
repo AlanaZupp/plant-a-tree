@@ -44,7 +44,7 @@
   right: -10px;
 }
 
-.cartPurchasedItems {
+#cartPurchasedItems {
   background-color: whitesmoke;
   position: relative;
   
