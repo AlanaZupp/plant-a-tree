@@ -139,7 +139,6 @@ export default class SearchPage extends Component{
             document.getElementById('result').innerHTML="The Results show nothing";
             document.getElementById('resultSec').innerHTML=""; 
         }
-
     }
 
     searchRes(value) {

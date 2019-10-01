@@ -1,4 +1,5 @@
 import React from 'react';
+import {addItem, yeet} from './shoppingcart';
 
 import oakpic from "./treePics/oak.png";
 import sprucepic from "./treePics/spruce.png";
