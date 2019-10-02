@@ -1,5 +1,4 @@
 import React from 'react';
-
 import oakpic from "./treePics/oak.png";
 import sprucepic from "./treePics/spruce.png";
 import junglepic from "./treePics/jungle.png";
@@ -10,12 +9,16 @@ import birchPic from "./treePics/birch.png";
 import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
+import "./searchpage.css";
+
+
 
 export default class Tree extends React.Component {
     constructor(name, price, category, soil, sun, mainten, height, growth, image) {
         super();
         this.state = {
             name: name,
+            modalID: "modal" + name.replace(/ /g, ''),
             price: price,
             category: category,
             soilCon: soil,
@@ -43,56 +46,80 @@ export default class Tree extends React.Component {
         return string;
     }
 
-    display_row() {
-        return(
-            <div class="col-md-6 col-lg-4">
-                <div class="mx-auto text-center" data-toggle="modal" data-target="#portfolioModal1">
-                    <h3>{this.state.name}</h3>
-                    <img src={this.state.pic} alt=" " />
+    modal() {
+    return (
+        <div class="modal fade" id={this.state.modalID} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{this.state.name}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {this.info_row()}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+}
 
-    info_string() {
-        var string = "";
-        string += "<h3>" + this.state.name + "</h3>" +
-            "<p><b>Category: </b>" + this.state.category + "</br>" +
-            "<b>Soild Drainage:</b> " + this.state.soilCon + "</br>" +
-            "<b>Sun Options:</b> " + this.state.sunCon + "</br>" +
-            "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
-            "<b>Max Height:</b> " + this.state.heightV + "</br>" +
-            "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
-            "<b>Price:</b> $" + this.state.price + "</br></p>" +
-            "<img src='" + this.state.pic + "' alt=' ' width='75' height='75'/>";
-        return string;
-    }
+modal_test() {
+    return (
+        <div>
+            {this.display_row()}
+            {this.modal()}
+        </div>
+    )
+}
 
-    info_row() {
-        return (
-            <div class="col-md-6 col-lg-4">
-                <div class="mx-auto text-center">
-                    <h3>{this.state.name}</h3>
-                    <p>
-                        <b>Category:</b> {this.state.category}<br></br>
-                        <b>Soil Drainage: </b>{this.state.soilCon}<br></br>
-                        <b>Sun Options:</b> {this.state.sunCon}<br></br>
-                        <b>Maintenance:</b> {this.state.mainten}<br></br>
-                        <b>Max height:</b>{this.state.heightV}<br></br>
-                        <b>Growth Rate:</b>{this.state.gRate}<br></br>
-                        <b>Price: </b>${this.state.price}
-                    </p>
-                    <img src={this.state.pic} alt=" " />
+display_row() {
+    return (
+        <div>
+            <div className="list-group">
+                <div className="card" data-toggle="modal" data-target="#portfolioModal0">
+                    <div className="d-flex w-100 justify-content-between">
+                        <h5 className="mb-1">{this.state.name}</h5>
+                        <small>${this.state.price}</small>
+                    </div>
+                    <img src={this.state.pic} alt={this.state.name} /><br></br>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target={"#" + this.state.modalID}>More Info</button>
                 </div>
             </div>
-        )
-    }
+            
 
+        </div>
+    )
+}
 
-    render() {
-        return (
+tf() {
+    alert("TEST");
+}
 
-            <div class="mx-auto text-center">
+info_string() {
+    var string = "";
+    string += "<h3>" + this.state.name + "</h3>" +
+        "<p><b>Category: </b>" + this.state.category + "</br>" +
+        "<b>Soild Drainage:</b> " + this.state.soilCon + "</br>" +
+        "<b>Sun Options:</b> " + this.state.sunCon + "</br>" +
+        "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
+        "<b>Max Height:</b> " + this.state.heightV + "</br>" +
+        "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
+        "<b>Price:</b> $" + this.state.price + "</br></p>" +
+        "<img src='" + this.state.pic + "' alt=' ' width='75' height='75'/>";
+    return string;
+}
+
+info_row() {
+    return (
+        <div className="col-md-6 col-lg-4">
+            <div className="mx-auto text-center">
                 <h3>{this.state.name}</h3>
                 <p>
                     <b>Category:</b> {this.state.category}<br></br>
@@ -105,8 +132,30 @@ export default class Tree extends React.Component {
                 </p>
                 <img src={this.state.pic} alt=" " />
             </div>
-        )
-    }
+        </div>
+    )
+}
+
+
+render() {
+    return (
+
+        <div className="mx-auto text-center">
+            <h3>{this.state.name}</h3>
+            <p>
+                <b>Category:</b> {this.state.category}<br></br>
+                <b>Soil Drainage: </b>{this.state.soilCon}<br></br>
+                <b>Sun Options:</b> {this.state.sunCon}<br></br>
+                <b>Maintenance:</b> {this.state.mainten}<br></br>
+                <b>Max height:</b>{this.state.heightV}<br></br>
+                <b>Growth Rate:</b>{this.state.gRate}<br></br>
+                <b>Price: </b>${this.state.price}
+            </p>
+            <img src={this.state.pic} alt=" " />
+
+        </div>
+    )
+}
 
 }
 

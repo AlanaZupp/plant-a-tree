@@ -4,6 +4,13 @@ import './homepage.css';
 import "./searchpage.css";
 
 export default class TreeInfo extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            tree: trees[0]
+        }
+    }
     render() {
         return (
             <div className="fullPage">
@@ -11,28 +18,27 @@ export default class TreeInfo extends Component {
                     <p>Tree Facts</p>
                 </div>
 
+
+                <div className="container">
+                    <div className="row">
+                        {
+                            trees.map(tree => (
+                                tree.modal_test()
+                            ))
+                        }
+                    </div>
+                </div>
+
                 <div className="treeList" id="treeList">
                     <br></br>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="portfolio-item mx-auto text-center" data-toggle="modal" data-target="#portfolioModal0">
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                        <div class="portfolio-item-caption-content text-center"></div>
-                                    </div>
-                                    <img class="img-fluid" src="img/projects/wheelspin.png" alt="">
-                                        <span class="badge badge-primary">University</span>
-                                        <span class="badge badge-info">Team</span>
-                                        <span class="badge badge-success">C++</span>
-                                        <h5>Wheelspin</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* select options to restrict the tree you wanna see 
+                </div>
+
+                <p>
+                    blah blah {this.state.tree.state.name}
+                </p>
+
+                {/* select options to restrict the tree you wanna see 
             <div className ="options">
                 <select className="custom-select" id="treeselect">
                             <option selected value="none">Category</option>
@@ -50,7 +56,7 @@ export default class TreeInfo extends Component {
                 <br></br><button type = "button" onClick="">Choose Tree</button> 
             </div>*/}
 
-                </div>
-                )
-            }
+            </div>
+        )
+    }
 }
