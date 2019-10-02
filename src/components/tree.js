@@ -37,7 +37,7 @@ export default class Tree extends React.Component {
         "<br/><b>Maintenance: </b>"+this.state.mainten+
         "<br/><b>Max height: </b>"+this.state.heightV+
         "<br/><b>Growth Rate: </b>"+this.state.gRate+
-        "<br/><b>Price: $</b><span>"+this.state.price+"</span>"+    //Span Tags here cause it fucks up if it isn't
+        "<br/><b>Price: $</b><span>"+this.state.price+"</span>"+ 
         "<br/><img src='"+this.state.pic+"'/><br/><br/>"+
         "<button class='cartButton'>Add To Cart</button>"+
         "</div>";
