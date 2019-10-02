@@ -75,8 +75,15 @@ export function clearCart() {
 }
 
 
-//TODO: Load all Cart Items into
+//TODO: Remove Current Items on Purchase List
 export function generatePurchaseList(){
+    const items = document.getElementsByClassName("purchaseItem");
+
+    for(var i = items.length - 1; i >= 0; i--)  //i-- as remove goes from largest number to smallest element. i.e. from element 4 then element 3 etc
+    {            
+        items[i].remove();
+    }    
+
     const purchaseList = [];
     const shoppingList = document.getElementsByClassName("cart-item");
 
