@@ -9,6 +9,7 @@ import birchPic from "./treePics/birch.png";
 import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
+import {setEventListener} from './shoppingcart';
 import "./searchpage.css";
 
 export default class Tree extends React.Component {
@@ -70,10 +71,11 @@ export default class Tree extends React.Component {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                            <button type="button" className="btn btn-primary cartButton">Add To Cart</button>
                         </div>
                     </div>
                 </div>
+                {setEventListener.async()}
             </div>
         )
     }
