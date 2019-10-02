@@ -19,24 +19,15 @@ export default class TreeInfo extends Component {
                 </div>
 
 
-                <div className="container">
+                <div className="container treeList" id="treeList">
                     <div className="row">
                         {
                             trees.map(tree => (
-                                tree.modal_test()
+                                tree.modal_display()
                             ))
                         }
                     </div>
                 </div>
-
-                <div className="treeList" id="treeList">
-                    <br></br>
-
-                </div>
-
-                <p>
-                    blah blah {this.state.tree.state.name}
-                </p>
 
                 {/* select options to restrict the tree you wanna see 
             <div className ="options">
