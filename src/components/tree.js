@@ -15,54 +15,84 @@ export default class Tree extends React.Component {
     constructor(name, price, category, soil, sun, mainten, height, growth, image) {
         super();
         this.state = {
-            name:name,
-            price:price,
-            category:category, 
-            soilCon:soil,
-            sunCon:sun,
-            mainten:mainten,
-            heightV:height,
-            gRate:growth,
-            pic:image
+            name: name,
+            price: price,
+            category: category,
+            soilCon: soil,
+            sunCon: sun,
+            mainten: mainten,
+            heightV: height,
+            gRate: growth,
+            pic: image
         }
     }
 
-    result_string()
-    {        
-        var string = "<div className='TreeObj'>"+
-        "<u><b>"+this.state.name+"</b></u><br/>"+
-        "<b>Category: </b>"+this.state.category+
-        "<br/><b>Soil Drainage: </b>"+this.state.soilCon+
-        "<br/><b>Sun Options: </b>"+this.state.sunCon+
-        "<br/><b>Maintenance: </b>"+this.state.mainten+
-        "<br/><b>Max height: </b>"+this.state.heightV+
-        "<br/><b>Growth Rate: </b>"+this.state.gRate+
-        "<br/><b>Price: $</b>"+this.state.price+
-        "<br/><img src='"+this.state.pic+"'/><br/><br/>"+
-        "<button className='addBtn'>Add To Cart</button>"+
-        "</div>";
+    result_string() {
+        var string = "<div className='TreeObj'>" +
+            "<u><b>" + this.state.name + "</b></u><br/>" +
+            "<b>Category: </b>" + this.state.category +
+            "<br/><b>Soil Drainage: </b>" + this.state.soilCon +
+            "<br/><b>Sun Options: </b>" + this.state.sunCon +
+            "<br/><b>Maintenance: </b>" + this.state.mainten +
+            "<br/><b>Max height: </b>" + this.state.heightV +
+            "<br/><b>Growth Rate: </b>" + this.state.gRate +
+            "<br/><b>Price: $</b>" + this.state.price +
+            "<br/><img src='" + this.state.pic + "'/><br/><br/>" +
+            "<button className='addBtn'>Add To Cart</button>" +
+            "</div>";
         return string;
     }
 
-    info_string()
-    {
+    display_row() {
+        return(
+            <div class="col-md-6 col-lg-4">
+                <div class="mx-auto text-center" data-toggle="modal" data-target="#portfolioModal1">
+                    <h3>{this.state.name}</h3>
+                    <img src={this.state.pic} alt=" " />
+                </div>
+            </div>
+        )
+    }
+
+    info_string() {
         var string = "";
         string += "<h3>" + this.state.name + "</h3>" +
-        "<p><b>Category: </b>" + this.state.category + "</br>" +
-        "<b>Soild Drainage:</b> " + this.state.soilCon + "</br>" +
-        "<b>Sun Options:</b> " + this.state.sunCon + "</br>" +
-        "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
-        "<b>Max Height:</b> " + this.state.heightV + "</br>" +
-        "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
-        "<b>Price:</b> $" + this.state.price + "</br></p>" +
-        "<img src='"+this.state.pic+"' alt=' ' width='75' height='75'/>";
+            "<p><b>Category: </b>" + this.state.category + "</br>" +
+            "<b>Soild Drainage:</b> " + this.state.soilCon + "</br>" +
+            "<b>Sun Options:</b> " + this.state.sunCon + "</br>" +
+            "<b>Maintenance:</b> " + this.state.mainten + "</br>" +
+            "<b>Max Height:</b> " + this.state.heightV + "</br>" +
+            "<b>Growth Rate:</b> " + this.state.gRate + "</br>" +
+            "<b>Price:</b> $" + this.state.price + "</br></p>" +
+            "<img src='" + this.state.pic + "' alt=' ' width='75' height='75'/>";
         return string;
     }
 
-    
+    info_row() {
+        return (
+            <div class="col-md-6 col-lg-4">
+                <div class="mx-auto text-center">
+                    <h3>{this.state.name}</h3>
+                    <p>
+                        <b>Category:</b> {this.state.category}<br></br>
+                        <b>Soil Drainage: </b>{this.state.soilCon}<br></br>
+                        <b>Sun Options:</b> {this.state.sunCon}<br></br>
+                        <b>Maintenance:</b> {this.state.mainten}<br></br>
+                        <b>Max height:</b>{this.state.heightV}<br></br>
+                        <b>Growth Rate:</b>{this.state.gRate}<br></br>
+                        <b>Price: </b>${this.state.price}
+                    </p>
+                    <img src={this.state.pic} alt=" " />
+                </div>
+            </div>
+        )
+    }
+
+
     render() {
-        return(
-            <div className="treecol">
+        return (
+
+            <div class="mx-auto text-center">
                 <h3>{this.state.name}</h3>
                 <p>
                     <b>Category:</b> {this.state.category}<br></br>
@@ -73,11 +103,11 @@ export default class Tree extends React.Component {
                     <b>Growth Rate:</b>{this.state.gRate}<br></br>
                     <b>Price: </b>${this.state.price}
                 </p>
-                <img src = {this.state.pic} alt=" " width="75" height="75"/>
+                <img src={this.state.pic} alt=" " />
             </div>
         )
-    }  
-    
+    }
+
 }
 
 var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "low", "<1", "fast", oakpic);
@@ -101,4 +131,4 @@ var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "low", "1-2", "
 var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", nopic);
 
 var trees = [oak, spruce, jungle, apple, fern, accacia, birch, darkOak, hedge, gum];
-export {trees}
+export { trees }

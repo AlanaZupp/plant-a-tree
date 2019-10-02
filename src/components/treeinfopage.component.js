@@ -1,26 +1,38 @@
-import React, {Component} from 'react';
-import {trees} from "./tree.js";
+import React, { Component } from 'react';
+import { trees } from "./tree.js";
 import './homepage.css';
 import "./searchpage.css";
 
-export default class TreeInfo extends Component{
-    render(){
-        return(
+export default class TreeInfo extends Component {
+    render() {
+        return (
             <div className="fullPage">
-            <div className="searchBar">
-                <p>Tree Facts</p>
-            </div>
+                <div className="searchBar">
+                    <p>Tree Facts</p>
+                </div>
 
-            <div className="treeList" id="treeList">
-                <br></br>
-                {
-                    trees.map(tree => (
-                        tree.render()
-                    ))
-                }
-            </div>
+                <div className="treeList" id="treeList">
+                    <br></br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="portfolio-item mx-auto text-center" data-toggle="modal" data-target="#portfolioModal0">
+                                    <div
+                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center"></div>
+                                    </div>
+                                    <img class="img-fluid" src="img/projects/wheelspin.png" alt="">
+                                        <span class="badge badge-primary">University</span>
+                                        <span class="badge badge-info">Team</span>
+                                        <span class="badge badge-success">C++</span>
+                                        <h5>Wheelspin</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            {/* select options to restrict the tree you wanna see 
+                    {/* select options to restrict the tree you wanna see 
             <div className ="options">
                 <select className="custom-select" id="treeselect">
                             <option selected value="none">Category</option>
@@ -38,7 +50,7 @@ export default class TreeInfo extends Component{
                 <br></br><button type = "button" onClick="">Choose Tree</button> 
             </div>*/}
 
-            </div>
-        )
-    }
+                </div>
+                )
+            }
 }
