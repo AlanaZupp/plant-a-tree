@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import './App.css';
+import {clearCart, generatePurchaseList} from './components/shoppingcart';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from 'react-bootstrap/Navbar';
@@ -30,7 +31,7 @@ class App extends Component {
                     <NavLink onClick={showCart}>
                       Shopping Cart
                       <span> </span>
-                      <span class="badge badge-secondary">0</span>
+                      <span class="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                        
                 </Nav.Item>
@@ -43,7 +44,7 @@ class App extends Component {
                     <NavLink onClick={showCart}>
                       Shopping Cart
                       <span> </span>
-                      <span class="badge badge-secondary">0</span>
+                      <span class="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                        
                 </Nav.Item>
@@ -73,7 +74,7 @@ class App extends Component {
                     <NavLink onClick={showCart}>
                       Shopping Cart
                       <span> </span>
-                      <span class="badge badge-secondary">0</span>
+                      <span class="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                            
                 </Nav.Item>      
@@ -86,41 +87,22 @@ class App extends Component {
                   <h4>Shopping Cart</h4>
               </div>
 
-              <div className="ShoppingCartObj">
-                <div className="cartPurchasedItems">
+              <div id="ShoppingCartObj">
+                {/* Items Go here */}
 
-                  <div className="cart-item d-flex justify-content-between">
-                    <img src="#" alt=""/>
-
-                    <p>Item Name</p>
-                    <div>
-                      <span>$</span>
-                      <span>10.00</span>
-                    </div>
-                  </div>
-
-                  
-                  <div className="cart-item d-flex justify-content-between">
-                    <img src="#" alt=""/>
-
-                    <p>Item2</p>
-                    <div>
-                      <span>$</span>
-                      <span>50.00</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div className="totalPrice">
-                    <h6>Total: $0.00</h6>
+                <div class="totalPriceDiv">
+                    <h6>
+                      <span>Total: $</span>
+                      <span id="totalPrice">0.00</span>
+                    </h6>
                 </div>
 
               </div>
 
               <div className="cartButtonDiv">
-                  <Button bg="dark" variant="dark" onClick={showCart}><NavLink>Clear Cart</NavLink></Button>
+                  <Button bg="dark" variant="dark" onClick={clearCart}><NavLink>Clear Cart</NavLink></Button>
                   <span> </span>
-                  <Button bg="dark" variant="dark"  onClick={showCart}><NavLink to="/buy">Purchase</NavLink></Button>
+                  <Button bg="dark" variant="dark"  onClick={generatePurchaseList}><NavLink to="/buy">Purchase</NavLink></Button>
               </div>
             </div>
           </div>
