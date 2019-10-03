@@ -71,7 +71,7 @@ export default class Tree extends React.Component {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary cartButton">Add To Cart</button>
+                            <button type="button" className="btn btn-primary cartButton" onClick="addItem()">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ export default class Tree extends React.Component {
                     <b>Maintenance:</b> {this.state.mainten}<br></br>
                     <b>Max height:</b>{this.state.heightV}<br></br>
                     <b>Growth Rate:</b>{this.state.gRate}<br></br>
-                    <b>Price: </b>${this.state.price}
+                    <b>Price: </b>$<span>{this.state.price}</span>
                 </p>
                 <img src={this.state.pic} alt=" " />
             </div>
