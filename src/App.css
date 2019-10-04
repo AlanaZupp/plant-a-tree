@@ -32,7 +32,7 @@
 }
 
 .cartContentPanel {
-  background-color: #7d8494;
+  background-color: #daffdf;
 
   position: relative;
   text-align: center;
@@ -44,7 +44,7 @@
   right: -10px;
 }
 
-.cartPurchasedItems {
+#cartPurchasedItems {
   background-color: whitesmoke;
   position: relative;
   

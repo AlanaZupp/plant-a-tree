@@ -1,26 +1,32 @@
-import React, {Component} from 'react';
-import {trees} from "./tree.js";
+import React, { Component } from 'react';
+import { trees } from "./tree.js";
 import './homepage.css';
 import "./searchpage.css";
 
-export default class TreeInfo extends Component{
-    render(){
-        return(
+export default class TreeInfo extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            tree: trees[0]
+        }
+    }
+    render() {
+        return (
             <div className="fullPage">
-            <div className="searchBar">
-                <p>Tree Facts</p>
-            </div>
+                <div className="searchBar"></div>
 
-            <div className="treeList" id="treeList">
-                <br></br>
-                {
-                    trees.map(tree => (
-                        tree.render()
-                    ))
-                }
-            </div>
+                <div className="container treeList" id="treeList">
+                    <div className="row">
+                        {
+                            trees.map(tree => (
+                                tree.modal_display()
+                            ))
+                        }
+                    </div>
+                </div>
 
-            {/* select options to restrict the tree you wanna see 
+                {/* select options to restrict the tree you wanna see 
             <div className ="options">
                 <select className="custom-select" id="treeselect">
                             <option selected value="none">Category</option>
