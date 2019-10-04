@@ -13,7 +13,7 @@ import {setEventListener} from './shoppingcart';
 import "./searchpage.css";
 
 export default class Tree extends React.Component {
-    constructor(name, price, category, soil, sun, mainten, height, growth, image) {
+    constructor(name, price, category, soil, sun, mainten, height, growth, image, fact) {
         super();
         this.state = {
             name: name,
@@ -25,12 +25,14 @@ export default class Tree extends React.Component {
             mainten: mainten,
             heightV: height,
             gRate: growth,
-            pic: image
+            pic: image,
+            fact: fact
         }
     }
 
     result_string()
     {        
+        //removed class button, cartButton as it crashing when reading this string
         var string = "<div class='TreeObj'>"+
         "<u><b>"+this.state.name+"</b></u><br/>"+
         "<b>Category: </b>"+this.state.category+
@@ -40,8 +42,8 @@ export default class Tree extends React.Component {
         "<br/><b>Max height: </b>"+this.state.heightV+
         "<br/><b>Growth Rate: </b>"+this.state.gRate+
         "<br/><b>Price: $</b><span>"+this.state.price+"</span>"+ 
-        "<br/><img src='"+this.state.pic+"'/><br/><br/>"+
-        "<button class='cartButton'>Add To Cart</button>"+
+        "<br/><img src='"+this.state.pic+"' width='150' height='150'/><br/><br/>"+
+        "<button class='' id='subButt'>Add To Cart</button>"+
         "</div>";
         return string;
     }
@@ -176,25 +178,35 @@ export default class Tree extends React.Component {
 
 }
 
-var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "low", "<1", "fast", oakpic);
+var oak = new Tree("Oak Tree", 150, "hardwood", "med", "sunny", "low", "<1", "fast", oakpic,+
+ "Oak trees are unique in that they have the smallest space requirements, and along with dark oak trees can drop an apple when their leaf block is destroyed.");
 
-var spruce = new Tree("Spruce Tree", 200, "evergreen", "slow", "shade", "med", "2-3", "med", sprucepic);
+var spruce = new Tree("Spruce Tree", 200, "evergreen", "slow", "shade", "med", "2-3", "med", sprucepic,+
+"Spruce trees, also known as pine trees, grow from spruce saplings and have growth patterns and requirements very similar to birch trees, though they look very different.");
 
-var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "med", "high", ">3", "slow", junglepic);
+var jungle = new Tree("Jungle Tree", 250, "hardwood", "fast", "med", "high", ">3", "slow", junglepic,+
+"Jungle trees are exclusive to the jungle biome. Jungle tree leaves drop jungle tree saplings, which appear tall and skinny like the jungle tree itself.");
 
-var apple = new Tree("Apple Tree", 150, "fruit", "med", "sunny", "med", "1-2", "med", applepic);
+var apple = new Tree("Apple Tree", 150, "fruit", "med", "sunny", "med", "1-2", "med", applepic,+
+"Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, is still found today.");
 
-var fern = new Tree("Fern Tree", 100, "native", "med", "shade", "low", "1", "fast", fernpic);
+var fern = new Tree("Fern Tree", 100, "native", "med", "shade", "low", "1", "fast", fernpic,+
+"Ferns spawn on grass block, but can only be found in jungle biomes. Destroying ferns will sometimes drop seeds.");
 
-var accacia = new Tree("Accacia Tree", 100, "palm", "fast", "sunny", "med", "2-3", "fast", acaciaPic);
+var accacia = new Tree("Accacia Tree", 100, "palm", "fast", "sunny", "med", "2-3", "fast", acaciaPic,+
+"Acacia trees are only found in the savanna biome. Acacia trees are around 8 blocks tall and feature unique diagonal trunks, and may occasionally have multiple canopies.");
 
-var birch = new Tree("Birch Tree", 100, "hardwood", "med", "med", "high", "2-3", "slow", birchPic);
+var birch = new Tree("Birch Tree", 100, "hardwood", "med", "med", "high", "2-3", "slow", birchPic,+
+"Birch trees look fairly similar to small oak trees in terms of height, and are most commonly found in birch forest biomes.");
 
-var darkOak = new Tree("Dark Oak Tree", 500, "hardwood", "med", "shade", "med", "2-3", "slow", darkOakPic);
+var darkOak = new Tree("Dark Oak Tree", 500, "hardwood", "med", "shade", "med", "2-3", "slow", darkOakPic,+
+"Dark oak trees are found only in the dark forest biome. They have thick, 2×2 trunks, and will generate dirt blocks under their trunk if generated on a steep cliff.");
 
-var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "low", "1-2", "slow", hedgePic);
+var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "low", "1-2", "slow", hedgePic,+
+"Leaves occur naturally on trees throughout the Overworld. Oak leaves also generate in woodland mansions.");
 
-var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", nopic);
+var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", nopic,+
+"Gum trees have bark that is either smooth, fibrous, hard or stringy, and leaves with oil glands. The fruit is a woody capsule commonly referred to as a gumnut");
 
 var trees = [oak, spruce, jungle, apple, fern, accacia, birch, darkOak, hedge, gum];
 export { trees }

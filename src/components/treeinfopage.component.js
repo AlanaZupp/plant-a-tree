@@ -14,10 +14,7 @@ export default class TreeInfo extends Component {
     render() {
         return (
             <div className="fullPage">
-                <div className="searchBar">
-                    <p>Tree Facts</p>
-                </div>
-
+                <div className="searchBar"></div>
 
                 <div className="container treeList" id="treeList">
                     <div className="row">

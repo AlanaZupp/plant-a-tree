@@ -11,3 +11,9 @@
     padding: 10px;
     height: 250px;
   }
+
+  .row {
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
+  }
