@@ -58,19 +58,19 @@ export default class HomePage extends Component{
                     <p>Click the trees to find out their facts!</p><br/><br/>
                     <div className = "fill">
                     <div className ="col-xs-1"> 
-                        <img src = {acacia} alt=" " width="90" height="90" onClick={this.treeInfopage}/>
-                        <img src = {apple} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
-                        <img src = {birch} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {acacia} alt="acacia" width="90" height="90" onClick={this.treeInfopage}/>
+                        <img src = {apple} alt="apple" width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {birch} alt="birch" width="90" height="90"onClick={this.treeInfopage}/>
                     </div>
                     <div className ="col-xs-1"></div>
-                        <img src = {dOak} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
-                        <img src = {fern} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
-                        <img src = {hedge} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {dOak} alt="dark oak" width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {fern} alt="fern" width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {hedge} alt="hedge" width="90" height="90"onClick={this.treeInfopage}/>
                     </div>
                     <div className ="col-xs-1">
-                        <img src = {jungle} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
-                        <img src = {oak} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
-                        <img src = {spruce} alt=" " width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {jungle} alt="jungle" width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {oak} alt="oak" width="90" height="90"onClick={this.treeInfopage}/>
+                        <img src = {spruce} alt="spruce" width="90" height="90"onClick={this.treeInfopage}/>
                     </div>
                     </div>
                 </div>
