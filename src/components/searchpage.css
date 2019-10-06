@@ -22,3 +22,12 @@ p{
 #subButt{
     background-color: rgb(204, 255, 128);
 }
+
+.tree_info {
+    padding-right: .5rem!important;
+    padding-left: .5rem!important;
+    padding-bottom: 1.5rem!important;
+    max-width: 25rem;
+    margin-bottom: 30px;
+    border-radius: .5rem;
+}
