@@ -17,3 +17,53 @@
     padding-top: 2%;
     padding-right: 2%;
   }
+
+  .purchaseItemList{
+    text-align: center;
+  }
+
+  .purchaseTotal{
+    text-align: center;
+  }
+
+  .infoDiv{
+    text-align: center;
+    width: 700px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: auto ;
+  }
+
+.deliveryDiv{
+  text-align: center;
+  width: 700px;
+  height: 500px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: auto;
+}
+
+.rating{
+  text-align: center;
+  width: 700px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: auto ;
+}
+
+#thanks{
+
+text-align: center;
+}
+#pickupButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+
+}
+
+#addressButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+
+}
