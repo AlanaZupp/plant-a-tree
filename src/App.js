@@ -117,7 +117,7 @@ class App extends Component {
 
         <div className="Footer">
           <div className="footer-copyright text-right py-3">
-              &copy; {new Date().getFullYear()} Copyright: Plant Wing Barn
+              &copy; {new Date().getFullYear()} Copyright: Wings Plant Barn
           </div>
         </div>
       </div>

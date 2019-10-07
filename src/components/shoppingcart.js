@@ -29,7 +29,7 @@ export function addItem(){
     var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
     item.name = name;
 
-    var price =this.parentElement.parentElement.children[1].children[0].children[1].children[13].textContent; //Grabs Price of Object
+    var price =this.parentElement.parentElement.children[1].children[0].children[2].children[13].textContent; //Grabs Price of Object
     item.price = price;
 
     //Add New Div for shopping cart
