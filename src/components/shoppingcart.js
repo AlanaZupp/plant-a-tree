@@ -23,7 +23,9 @@ export function addItem(){
     //Get All Required Info and Apply to an Item Object
     const item = {};
 
-    var img = "#"        //TODO: Retrieve Img Src
+    //var tree = Tree(this.parentElement.parentElement.children[1].children[0]);
+
+    var img = this.parentElement.parentElement.children[1].children[0].children[1].src;        //TODO: Retrieve Img Src
     item.img = img;
 
     var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
@@ -38,7 +40,7 @@ export function addItem(){
     
 
     cartItem.innerHTML = `
-        <img src=${item.img}/>
+        <img src='${item.img}'=/>
         <p>${item.name}</p>
         <div>
             <span>$</span>
@@ -91,7 +93,7 @@ export function generatePurchaseList(){
     {            
         var name = shoppingList[i].children[1].textContent;
         var price = shoppingList[i].children[2].children[1].textContent;
-        var img = "#";  //TODO: Get Image URL
+        var img = shoppingList[i].children[0].src;
 
         const purchaseItem = document.createElement("div");
         purchaseItem.classList.add("purchaseItem");
