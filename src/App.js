@@ -29,9 +29,9 @@ class App extends Component {
                 <Nav.Item className="d-sm-none"> 
                   <Nav.Link>
                     <NavLink onClick={showCart}>
-                      Shopping Cart
+                      <span>Shopping Cart</span>
                       <span> </span>
-                      <span class="badge badge-secondary itemCount">0</span>
+                      <span className="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                        
                 </Nav.Item>
@@ -42,9 +42,9 @@ class App extends Component {
                 <Nav.Item className="d-none d-sm-block d-md-none"> 
                   <Nav.Link>
                     <NavLink onClick={showCart}>
-                      Shopping Cart
+                      <span>Shopping Cart</span>
                       <span> </span>
-                      <span class="badge badge-secondary itemCount">0</span>
+                      <span className="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                        
                 </Nav.Item>
@@ -72,9 +72,9 @@ class App extends Component {
                 <Nav.Item className="d-none d-md-block">
                   <Nav.Link>
                     <NavLink onClick={showCart}>
-                      Shopping Cart
+                      <span>Shopping Cart</span>
                       <span> </span>
-                      <span class="badge badge-secondary itemCount">0</span>
+                      <span className="badge badge-secondary itemCount">0</span>
                     </NavLink>
                   </Nav.Link>                            
                 </Nav.Item>      

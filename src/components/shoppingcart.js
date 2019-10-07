@@ -21,10 +21,18 @@ export function setEventListener_removeItem(){
 //Add Items to Cart
 export function addItem(){
     //Get All Required Info and Apply to an Item Object
-    const item = {};
+    const item = {};   
+    const baseUrl = "./treePics/";
 
-    var img = "#"        //TODO: Retrieve Img Src
-    item.img = img;
+    var img_url = this.parentElement.parentElement.children[1].children[0].children[0].textContent;
+    img_url = img_url.toLowerCase();
+    img_url = img_url.replace(' ', '');
+    img_url = img_url.replace('tree', '');
+    img_url = img_url + ".png";
+    img_url = img_url.replace(' ', '');
+
+    var img = baseUrl + img_url;        
+    console.log(img);
 
     var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
     item.name = name;
@@ -36,9 +44,8 @@ export function addItem(){
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart-item","d-flex","justify-content-between")
     
-
     cartItem.innerHTML = `
-        <img src=${item.img}/>
+        <img width="50" height="50"  src=${require(""+img)}/>
         <p>${item.name}</p>
         <div>
             <span>$</span>
@@ -87,7 +94,7 @@ export function generatePurchaseList(){
     const purchaseList = [];
     const shoppingList = document.getElementsByClassName("cart-item");
 
-    for(var i = 0; i < shoppingList.length; i++) 
+    for(i = 0; i < shoppingList.length; i++) 
     {            
         var name = shoppingList[i].children[1].textContent;
         var price = shoppingList[i].children[2].children[1].textContent;
@@ -124,7 +131,7 @@ function loadPurchaseList(purchaseList){
     const prices = [];
     const items = document.getElementsByClassName("purchasePrice");
 
-    for(var i = 0; i < items.length; i++)
+    for(i = 0; i < items.length; i++)
     {
         prices.push(parseFloat(items[i].textContent));
     }
@@ -159,9 +166,20 @@ function showTotals(){
     document.getElementById("totalPrice").textContent = finalMoney;
 
     const iCounts = document.getElementsByClassName("itemCount");
-    for(var i = 0; i < iCounts.length; i++)
+    for(i = 0; i < iCounts.length; i++)
     {
         iCounts[i].textContent = total.length;
     }
+
+}
+
+function imageExists(image_url){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
 
 }

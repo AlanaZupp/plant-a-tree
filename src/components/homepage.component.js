@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import farm from "./treePics/farm.png";
-import acacia from "./treePics/acacia.png";
+import acacia from "./treePics/accacia.png";
 import birch from "./treePics/birch.png";
-import dOak from "./treePics/dOak.png";
+import dOak from "./treePics/darkoak.png";
 import hedge from "./treePics/hedge.png";
 import apple from "./treePics/apple.png";
 import fern from "./treePics/fern.png";

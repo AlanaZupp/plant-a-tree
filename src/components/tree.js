@@ -4,9 +4,9 @@ import sprucepic from "./treePics/spruce.png";
 import junglepic from "./treePics/jungle.png";
 import applepic from "./treePics/apple.png";
 import fernpic from "./treePics/fern.png";
-import acaciaPic from "./treePics/acacia.png";
+import acaciaPic from "./treePics/accacia.png";
 import birchPic from "./treePics/birch.png";
-import darkOakPic from "./treePics/dOak.png";
+import darkOakPic from "./treePics/darkoak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
 import {setEventListener} from './shoppingcart';
@@ -59,25 +59,26 @@ export default class Tree extends React.Component {
 
     modal() {
         return (
-            <div class="modal fade" id={this.state.modalID} tabindex="-1" role="dialog" aria-labelledby="treeModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="treeModalLabel">{this.state.name}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal fade" id={this.state.modalID} tabIndex="-1" role="dialog" aria-labelledby="treeModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="treeModalLabel">{this.state.name}</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             {this.info()}
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary cartButton" onClick="addItem()">Add To Cart</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary cartButton">Add To Cart</button>
                         </div>
                     </div>
                 </div>
                 {setEventListener.async()}
+                
             </div>
         )
     }
@@ -94,7 +95,7 @@ export default class Tree extends React.Component {
                             <small>${this.state.price}</small>
                         </div>
                         <img src={this.state.pic} alt={this.state.name} /><br></br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target={"#" + this.state.modalID}>More Info</button>
+                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target={"#" + this.state.modalID}>More Info</button>
                     </div>
                 </div>
 
