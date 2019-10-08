@@ -22,7 +22,7 @@ export function setEventListener_removeItem(){
 export function addItem(){
     //Get All Required Info and Apply to an Item Object
     const item = {};   
-    const baseUrl = "./treePics/";
+    const baseUrl = "components/treePics/";
 
     var img_url = this.parentElement.parentElement.children[1].children[0].children[0].textContent;
     img_url = img_url.toLowerCase();
@@ -33,6 +33,8 @@ export function addItem(){
 
     var img = baseUrl + img_url;        
     console.log(img);
+
+    console.log(imageExists(img));
 
     var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
     item.name = name;
