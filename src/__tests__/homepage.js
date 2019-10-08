@@ -10,3 +10,4 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
   
+//Adding comment for Acceptance Tests
