@@ -202,6 +202,7 @@ export default class BuyPage extends Component {
     }
 
     purchaseAction() {
+        treeCareInfo = "";
         const items = document.getElementsByClassName("purchaseItem");
 
         for (var i = 0; i < items.length; i++) {
