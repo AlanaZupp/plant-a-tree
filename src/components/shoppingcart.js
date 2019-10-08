@@ -1,3 +1,5 @@
+import "./searchpage.css";
+
 Function.prototype.async = function () {
     setTimeout.bind(null, this, 0).apply(null, arguments);
 };
@@ -23,8 +25,6 @@ export function addItem(){
     //Get All Required Info and Apply to an Item Object
     const item = {};
 
-    //var tree = Tree(this.parentElement.parentElement.children[1].children[0]);
-
     var img = this.parentElement.parentElement.children[1].children[0].children[1].src;        //TODO: Retrieve Img Src
     item.img = img;
 
@@ -40,7 +40,7 @@ export function addItem(){
     
 
     cartItem.innerHTML = `
-        <img src='${item.img}'=/>
+        <img class='cart-img' src='${item.img}'=/>
         <p>${item.name}</p>
         <div>
             <span>$</span>
@@ -100,7 +100,7 @@ export function generatePurchaseList(){
         
         purchaseItem.innerHTML =  
         `
-            <img src="${img}"/>
+            <img class='cart-img' src="${img}"/>
             <span>${name}</span>
             <span>$</span>
             <span class=purchasePrice>${price}</span>                

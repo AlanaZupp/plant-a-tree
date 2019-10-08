@@ -10,6 +10,7 @@ import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
 import {setEventListener} from './shoppingcart';
+
 import "./searchpage.css";
 
 export default class Tree extends React.Component {
@@ -94,7 +95,7 @@ export default class Tree extends React.Component {
                             <h5 className="mb-1">{this.state.name}</h5>
                             <small>${this.state.price}</small>
                         </div>
-                        <img src={this.state.pic} alt={this.state.name} /><br></br>
+                        <img class="tree_img" src={this.state.pic} alt={this.state.name} /><br></br>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target={"#" + this.state.modalID}>More Info</button>
                     </div>
                 </div>
