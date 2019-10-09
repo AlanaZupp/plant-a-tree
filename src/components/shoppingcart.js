@@ -105,9 +105,7 @@ export function generatePurchaseList(){
         `;
         purchaseList.push(purchaseItem);
     } 
-
     loadPurchaseList.async(purchaseList);
-
 }
 
 function loadPurchaseList(purchaseList){
@@ -137,6 +135,57 @@ function loadPurchaseList(purchaseList){
     const finalPrice = totalPrice.toFixed(2);
 
     document.getElementById("purchaseTotal").textContent = finalPrice;
+}
+
+export function addDelivery(charge)
+{    
+    const cart = document.getElementById("purchaseItemList");
+    const total = document.querySelector("#purchaseTotalDiv");
+    const items = document.getElementsByClassName("purchaseItem");
+
+    //Check if Delivery Charge is Present    
+    const deliveryCharges = document.getElementById("deliveryCharge");
+
+    if(deliveryCharges != null){
+        deliveryCharges.remove();
+    } 
+
+
+    //check Item Count    
+    if(items.length <= 10)
+    {
+        //create Item and Add to List
+        const purchaseItem = document.createElement("div");
+        purchaseItem.classList.add("purchaseItem");
+        purchaseItem.id = "deliveryCharge";
+
+        purchaseItem.innerHTML =  
+        `            
+            <span></span>
+            <span>Delivery Charge</span>
+            <span>$</span>
+            <span class=purchasePrice>${charge}</span>                
+        `;
+        cart.insertBefore(purchaseItem, total);
+
+        //Recalculate Total
+        const prices = [];
+        const items = document.getElementsByClassName("purchasePrice");
+
+        for(var i = 0; i < items.length; i++)
+        {
+        prices.push(parseFloat(items[i].textContent));
+        }
+
+        const totalPrice = prices.reduce(function(prices, item) {
+        prices += item;
+        return prices;
+        }, 0); 
+
+        const finalPrice = totalPrice.toFixed(2);
+
+        document.getElementById("purchaseTotal").textContent = finalPrice;
+    }    
 }
 
 function showTotals(){

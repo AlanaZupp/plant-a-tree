@@ -5,6 +5,8 @@ import Rating from '@material-ui/lab/Rating';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import "./homepage.css";
 
+import {addDelivery} from './shoppingcart';
+
 export default class BuyPage extends Component{
    
     constructor(props) {
@@ -129,15 +131,18 @@ export default class BuyPage extends Component{
         var notAuck = "$22 shipping cost for 1-10 products purchased.";
 
         if(result === "Urban"){
-            document.getElementById('printShipping').innerHTML = urban; 
+            document.getElementById('printShipping').innerHTML = urban;
+            addDelivery(10.00); 
         }
 
         if(result === "Rural"){
             document.getElementById('printShipping').innerHTML = rural;   
+            addDelivery(17.00);
         }
 
         if(result === "OutsideAuckland"){
             document.getElementById('printShipping').innerHTML = notAuck; 
+            addDelivery(22.00);
             
         }
 
