@@ -9,6 +9,7 @@ import birchPic from "./treePics/birch.png";
 import darkOakPic from "./treePics/dOak.png";
 import hedgePic from "./treePics/hedge.png";
 import nopic from "./treePics/NO_IMAGE.png";
+import gumPic from "./treePics/gum.png";
 import {setEventListener} from './shoppingcart';
 import "./searchpage.css";
 
@@ -207,7 +208,7 @@ var darkOak = new Tree("Dark Oak Tree", 500, "hardwood", "med", "shade", "med", 
 var hedge = new Tree("Hedge Tree", 34, "hedge", "fast", "shade", "low", "1-2", "slow", hedgePic,
 "Leaves occur naturally on trees throughout the Overworld. Oak leaves also generate in woodland mansions.");
 
-var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", nopic,
+var gum = new Tree("Gum Tree", 100, "gum", "fast", "med", "med", ">3", "fast", gumPic,
 "Gum trees have bark that is either smooth, fibrous, hard or stringy, and leaves with oil glands. The fruit is a woody capsule commonly referred to as a gumnut");
 
 var trees = [oak, spruce, jungle, apple, fern, accacia, birch, darkOak, hedge, gum];
