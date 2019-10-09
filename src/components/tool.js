@@ -5,7 +5,7 @@ import hoepic from "./toolPics/hoe.png";
 import compostpic from "./toolPics/compost.png";
 import fertpic from "./toolPics/fertilizer.png";
 
-import {setEventListener} from './shoppingcart';
+import {setEventListener_tools} from './shoppingcart';
 
 import "./searchpage.css";
 
@@ -49,7 +49,7 @@ export default class Tool extends React.Component {
                         </div>
                     </div>
                 </div>
-                {setEventListener.async()}
+                {setEventListener_tools.async()}
             </div>
         )
     }
