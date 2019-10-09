@@ -13,6 +13,7 @@ import HomePage from "./components/homepage.component";
 import SearchPage from "./components/searchpage.component";
 import BuyPage from "./components/buypage.component";
 import TreeInfoPage from "./components/treeinfopage.component";
+import ToolInfoPage from "./components/toolPage.component";
 
 class App extends Component {  
   render(){
@@ -63,6 +64,10 @@ class App extends Component {
                     <Nav.Item>
                       <Nav.Link><NavLink className="nav-link" to="/treeinfo" activeClassName="current">Tree Info</NavLink></Nav.Link>   
                     </Nav.Item> 
+
+                    <Nav.Item>
+                      <Nav.Link><NavLink className="nav-link" to="/toolinfo" activeClassName="current">Tools</NavLink></Nav.Link>   
+                    </Nav.Item> 
                   </Nav>
                 </Navbar.Collapse>    
 
@@ -112,6 +117,7 @@ class App extends Component {
             <Route path="/search" component={SearchPage}/>
             <Route path="/buy" component={BuyPage}/>   
             <Route path="/treeinfo" component={TreeInfoPage}/>
+            <Route path="/toolinfo" component={ToolInfoPage}/>
           </div>            
         </Router>
 

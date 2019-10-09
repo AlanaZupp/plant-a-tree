@@ -63,7 +63,11 @@
 #addressButt{
   background-color: rgb(204, 255, 128);
   float: center;
+}
 
+#buyButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
 }
 
 #shippingButt{

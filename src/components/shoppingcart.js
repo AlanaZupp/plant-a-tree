@@ -1,3 +1,5 @@
+import "./searchpage.css";
+
 Function.prototype.async = function () {
     setTimeout.bind(null, this, 0).apply(null, arguments);
 };
@@ -7,6 +9,14 @@ export function setEventListener(){
     for(var i = 0; i < button.length; i++)
     {
         button[i].onclick = addItem;
+    }
+}
+
+export function setEventListener_tools(){
+    var button = document.getElementsByClassName("cartButton");    
+    for(var i = 0; i < button.length; i++)
+    {
+        button[i].onclick = addTools;
     }
 }
 
@@ -23,7 +33,7 @@ export function addItem(){
     //Get All Required Info and Apply to an Item Object
     const item = {};
 
-    var img = "#"        //TODO: Retrieve Img Src
+    var img = this.parentElement.parentElement.children[1].children[0].children[1].src;        //TODO: Retrieve Img Src
     item.img = img;
 
     var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
@@ -38,7 +48,7 @@ export function addItem(){
     
 
     cartItem.innerHTML = `
-        <img src=${item.img}/>
+        <img class='cart-img' src='${item.img}'=/>
         <p>${item.name}</p>
         <div>
             <span>$</span>
@@ -62,6 +72,47 @@ export function addItem(){
 export function removeItem() {
     this.parentElement.remove();    
     showTotals();
+}
+
+export function addTools(){
+    //Get All Required Info and Apply to an Item Object
+    const item = {};
+
+    var img = this.parentElement.parentElement.children[1].children[0].children[1].src; 
+    item.img = img;
+
+    var name = this.parentElement.parentElement.children[1].children[0].children[0].textContent;  //Grab Object Title (Tree/Tool Name)
+    item.name = name;
+
+    var price = 10.00;
+    var price =this.parentElement.parentElement.children[1].children[0].children[2].children[1].textContent; //Grabs Price of Object
+    item.price = price;
+
+    //Add New Div for shopping cart
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item","d-flex","justify-content-between")
+    
+
+    cartItem.innerHTML = `
+        <img class='cart-img' src='${item.img}'=/>
+        <p>${item.name}</p>
+        <div>
+            <span>$</span>
+            <span class="itemPrice">${item.price}</span>
+        </div>
+        <button class="removeItem">X</button>
+    `;   
+    
+    //Select Cart and Insert new Item
+    const cart = document.getElementById("ShoppingCartObj");
+    const total = document.querySelector(".totalPriceDiv");
+    
+    cart.insertBefore(cartItem, total);
+    
+    //alert("Added to Cart");   //TODO: Added to Cart Pop-up
+
+    showTotals();
+    setEventListener_removeItem.async();    
 }
 
 export function clearCart() {
@@ -91,14 +142,14 @@ export function generatePurchaseList(){
     {            
         var name = shoppingList[i].children[1].textContent;
         var price = shoppingList[i].children[2].children[1].textContent;
-        var img = "#";  //TODO: Get Image URL
+        var img = shoppingList[i].children[0].src;
 
         const purchaseItem = document.createElement("div");
         purchaseItem.classList.add("purchaseItem");
         
         purchaseItem.innerHTML =  
         `
-            <img src="${img}"/>
+            <img class='cart-img' src="${img}"/>
             <span>${name}</span>
             <span>$</span>
             <span class=purchasePrice>${price}</span>                
