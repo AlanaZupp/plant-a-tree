@@ -25,7 +25,7 @@ export default class SearchBox extends Component {
                     Find the tree(s) you're looking for... 
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Search" />
+                <input type="submit" value="Search" id = "searchButt"/>
             </form>
         );
     }
