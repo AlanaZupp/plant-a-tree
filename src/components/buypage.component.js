@@ -7,6 +7,7 @@ import { trees } from "./tree.js";
 import "./homepage.css";
 
 var treeCareInfo = "";
+var purchaseConfirm = "";
 
 export default class BuyPage extends Component {
 
@@ -60,12 +61,12 @@ export default class BuyPage extends Component {
                     <form>
                         <label>First Name: </label>
                         <span> </span>
-                        <input name="fname" type="text"></input>
+                        <input id="fname" type="text"></input>
                         <br /><br />
 
                         <label>Last Name: </label>
                         <span> </span>
-                        <input name="lname" type="text"></input>
+                        <input id="lname" type="text"></input>
                         <br /><br />
 
                         <label>Contact Number: </label>
@@ -157,12 +158,17 @@ export default class BuyPage extends Component {
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="purchaseModalLabel">Tree Care Info</h5>
+                                <h5 class="modal-title" id="purchaseModalLabel">Purchase Confirmation</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
+                            <div id="purchaseTextBody">
+                                    {purchaseConfirm}
+                                </div>
+                                <br/><br/>
+
                                 <div id="treeCareInfoTextBody">
                                     {treeCareInfo}
                                 </div>
@@ -202,8 +208,22 @@ export default class BuyPage extends Component {
     }
 
     purchaseAction() {
+        //Get Purchase Confirm Info
+        purchaseConfirm = "";
+
+        const fullname = document.getElementById('fname').value +" "+ document.getElementById('lname').value;
+        const price = document.getElementById("purchaseTotal").textContent;
+        console.log(price,+"|"+ fullname);
+
+        purchaseConfirm = "Confirming your purchase order for "+fullname+" costing $"+price+" has been placed";
+
+        document.getElementById('purchaseTextBody').innerHTML = purchaseConfirm;
+
+        //Get Tree Info
         treeCareInfo = "";
         const items = document.getElementsByClassName("purchaseItem");
+
+        treeCareInfo += "<strong>Here are some Helpful Hints on Caring for your Tree!</strong><br/><br/>";
 
         for (var i = 0; i < items.length; i++) {
             for (var j = 0; j < trees.length; j++) {
