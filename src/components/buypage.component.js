@@ -10,6 +10,12 @@ import {addDelivery} from './shoppingcart';
 
 var treeCareInfo = "";
 var purchaseConfirm = "";
+var alertText = "";
+
+var hasShippingType = false;
+var hasPersonalInfo = false;
+var hasAddressDetails = false;
+
 
 export default class BuyPage extends Component {
 
@@ -57,6 +63,7 @@ export default class BuyPage extends Component {
 
         document.getElementById('addressValidation').innerHTML = "<b> "+ "Is this the correct address?" + "</b>" + "</br>" + this.state.add1 +"</br>"+ this.state.add2 +
         "</br>"+ this.state.city+ ", " + this.state.region + ", " + this.state.postcode;
+        hasAddressDetails = true;
         }
         else
         {
@@ -82,6 +89,7 @@ export default class BuyPage extends Component {
 
         document.getElementById('personalConfirm').innerHTML = "<b> "+ "Is this the correct information?" + "</b>" + "</br>Name: " + this.state.fname +" "+ this.state.lname +
         "</br>Phone: "+ this.state.phonenum;
+        hasPersonalInfo = true;        
         }
         else
         {
@@ -110,15 +118,17 @@ export default class BuyPage extends Component {
 
         if(result == "Mount Eden"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + eden + "'target ='popup'>445 Mount Eden Road, Mount Eden, Auckland, 1024. </a>" + "<br/>" + edenPh ;
+            hasAddressDetails = true;
         }
 
         if(result == "East Tamaki"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + easttam + "'target ='popup'>29 Kerwyn Avenue, East Tamaki, Auckland, 2013. </a>" + "<br/>" + eastPh ;
+            hasAddressDetails = true;
         }
 
         if(result == "Albany"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + albany + "'target ='popup'>67 Kell Drive, Albany, Auckland 0632. </a>" + "<br/>" + albanyPh ;
-
+            hasAddressDetails = true;
         }
 
         if(result == "No option selected"){
@@ -135,17 +145,20 @@ export default class BuyPage extends Component {
         var notAuck = "$22 shipping cost for 1-10 products purchased.";
 
         if(result === "Urban"){
-            document.getElementById('printShipping').innerHTML = urban;
+            document.getElementById('printShipping').innerHTML = urban;            
+            hasShippingType = true;
             addDelivery(10.00); 
         }
 
         if(result === "Rural"){
-            document.getElementById('printShipping').innerHTML = rural;   
+            document.getElementById('printShipping').innerHTML = rural;       
+            hasShippingType = true;
             addDelivery(17.00);
         }
 
         if(result === "OutsideAuckland"){
-            document.getElementById('printShipping').innerHTML = notAuck; 
+            document.getElementById('printShipping').innerHTML = notAuck;     
+            hasShippingType = true;
             addDelivery(22.00);
             
         }
@@ -174,8 +187,8 @@ export default class BuyPage extends Component {
                         {/* PurchaseItem go Here */}
 
                         <div id="purchaseTotalDiv">
-                            <h6 align="center">Total: $</h6>
-                            <span id="purchaseTotal"></span>   <br></br>
+                            <h6 align="center">Total: $<span id="purchaseTotal"></span></h6>
+                            <br></br>
                         </div>
                     </div>
                     <button type="button" id="buyButt" onClick={this.purchaseAction} data-toggle="modal" data-target={"#purchaseModal"}>Confirm Purchase</button>
@@ -185,12 +198,12 @@ export default class BuyPage extends Component {
                 <form id = "personal">
                     <label>First Name: *</label>
                     <span> </span>
-                    <input name="fname" type="text" onChange={this.changePersonal}></input>
+                    <input id="fname" name="fname" type="text" onChange={this.changePersonal}></input>
                     <br/><br/>
 
                     <label>Last Name: *</label>
                     <span> </span>
-                    <input name="lname" type="text" onChange={this.changePersonal}></input>
+                    <input id="lname" name="lname" type="text" onChange={this.changePersonal}></input>
                     <br/><br/>
 
                     <label>Contact Number: *</label>
@@ -286,89 +299,7 @@ export default class BuyPage extends Component {
                 <h6 align = "center">RATE OUR SERVICE</h6>
                 <p>Help provide the company with feedback by rating our service!</p>
                 <br></br>
-                <div className="infoDiv">
-                    <h6 align="center">PERSONAL INFORMATION</h6><br></br>
-                    <form>
-                        <label>First Name: </label>
-                        <span> </span>
-                        <input id="fname" type="text"></input>
-                        <br /><br />
-
-                        <label>Last Name: </label>
-                        <span> </span>
-                        <input id="lname" type="text"></input>
-                        <br /><br />
-
-                        <label>Contact Number: </label>
-                        <span> </span>
-                        <input name="phonenum" type="text"></input>
-                        <br /><br />
-
-                        <label>Email Address: </label>
-                        <span> </span>
-                        <input name="email" type="text"></input>
-
-                    </form>
-                </div>
-                <br></br>
-                <div className="deliveryDiv">
-                    <h6 align="center">CHOOSE DELIVERY METHOD</h6>
-                    <Tabs defaultActiveKey="profile" id="delivery-method">
-                        <Tab eventKey="delivery" title="Delivery" id="del">
-
-                            * indicates a required field <br /><br />
-                            <form>
-                                <label> Delivery Address 1: *</label>
-                                <span> </span>
-                                <input name="add1" type="text"></input>
-                                <br /><br />
-
-                                <label>Delivery Address 2: </label>
-                                <span> </span>
-                                <input name="add2" type="text"></input>
-                                <br /><br />
-
-                                <label>City/Suburb: *</label>
-                                <span> </span>
-                                <input name="city" type="text"></input>
-                                <br /><br />
-
-                                <label>Region: *</label>
-                                <span> </span>
-                                <input name="region" type="text"></input>
-
-                                <br /><br />
-                                <label>Postcode: *</label>
-                                <span> </span>
-                                <input name="postcode" type="text"></input>
-
-                                <br /><br />
-                                <button type="button" id="addressButt">Use this address</button>
-
-                            </form>
-
-                        </Tab>
-                        <Tab eventKey="pickup" title="Pickup" id="pick">
-                            <br></br>
-                            <select className="custom-select custom-select-sm bg-light" id="pickupbranch">
-                                <option value="No option selected" id="none">--Select Option--</option>
-                                <option value="Mount Eden" id="mteden">Mount Eden</option>
-                                <option value="East Tamaki" id="easttam">East Tamaki</option>
-                                <option value="Albany" id="albany">Albany</option>
-                            </select>
-
-                            <p id="print"></p><br></br><br></br><br></br>
-
-                            <button type="button" id="pickupButt" onClick={this.getSelectedBranch}>Choose this branch</button>
-                        </Tab>
-                    </Tabs>
-
-                </div>
-                <br></br>
-                <div className="rating">
-                    <h6 align="center">RATE OUR SERVICE</h6>
-                    <p>Help provide the company with feedback by rating our service!</p
-                    ><br></br>
+                
                     <br></br>
                     <Rating
                         size="large"
@@ -409,65 +340,66 @@ export default class BuyPage extends Component {
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
         )
     }
-
-    getSelectedBranch() {
-        var branch = document.getElementById('pickupbranch');
-        var result = branch.options[branch.selectedIndex].value;
-        var mteden = "445 Mount Eden Road, Mount Eden, Auckland, 1024. Contact ph: Stephen Beck (09) 789 4455";
-        var easttam = "29 Kerwyn Avenue, East Tamaki, Auckland, 2013. Contact ph: Amy Anderson (09) 789 4444";
-        var albany = "67 Kell Drive, Albany, Auckland 0632. Contact ph: Chris Wilson (09) 789 1458";
-        var none = "No option selected";
-
-        if (result == "Mount Eden") {
-            document.getElementById('print').innerHTML = mteden;
-        }
-
-        if (result == "East Tamaki") {
-            document.getElementById('print').innerHTML = easttam;
-        }
-
-        if (result == "Albany") {
-            document.getElementById('print').innerHTML = albany;
-
-        }
-
-    }
-
+    
     purchaseAction() {
-        //Get Purchase Confirm Info
-        purchaseConfirm = "";
 
-        const fullname = document.getElementById('fname').value +" "+ document.getElementById('lname').value;
-        const price = document.getElementById("purchaseTotal").textContent;
-        console.log(price,+"|"+ fullname);
+        alertText = "";
 
-        purchaseConfirm = "Confirming your purchase order for "+fullname+" costing $"+price+" has been placed";
+        //Check if all Info is entered
+        if(!hasPersonalInfo)
+        {
+            alertText += "You Must Ensure you have confirmed your Personal Details!\n\n";
+        }
+        
+        if(!hasShippingType)
+        {
+            alertText += "You Must Ensure you have confirmed the type of Shipping you need!\n\n";
+        }
 
-        document.getElementById('purchaseTextBody').innerHTML = purchaseConfirm;
+        if(!hasAddressDetails)
+        {
+            alertText += "You Must Ensure you have confirmed your Address Information!\n\n";
+        }
 
-        //Get Tree Info
-        treeCareInfo = "";
-        const items = document.getElementsByClassName("purchaseItem");
+        ///Check for Validation
+        if(hasShippingType && hasPersonalInfo && hasAddressDetails)
+        {
+            //Get Purchase Confirm Info
+            purchaseConfirm = "";
 
-        treeCareInfo += "<strong>Here are some Helpful Hints on Caring for your Tree!</strong><br/><br/>";
+            const fullname = document.getElementById('fname').value +" "+ document.getElementById('lname').value;
+            const price = document.getElementById("purchaseTotal").textContent;
+            console.log(price,+"|"+ fullname);
 
-        for (var i = 0; i < items.length; i++) {
-            for (var j = 0; j < trees.length; j++) {
-                if (trees[j].state.name === items[i].children[1].textContent) {
-                    console.log(trees[j].state.m_info);
-                    treeCareInfo += trees[j].state.m_info + "<br></br>";
+            purchaseConfirm = "Confirming your purchase order for "+fullname+" costing $"+price+" has been placed";
+
+            document.getElementById('purchaseTextBody').innerHTML = purchaseConfirm;
+
+            //Get Tree Info
+            treeCareInfo = "";
+            const items = document.getElementsByClassName("purchaseItem");
+
+            if(items.length != 0){
+                treeCareInfo += "<strong>Here are some Helpful Hints on Caring for your Trees and Tools!</strong><br/><br/>";
+            }
+
+            for (var i = 0; i < items.length; i++) {
+                for (var j = 0; j < trees.length; j++) {
+                    if (trees[j].state.name === items[i].children[1].textContent) {
+                        console.log(trees[j].state.m_info);
+                        treeCareInfo += trees[j].state.m_info + "<br></br>";
+                    }
                 }
             }
+
+            document.getElementById('treeCareInfoTextBody').innerHTML = treeCareInfo;
         }
-
-        document.getElementById('treeCareInfoTextBody').innerHTML = treeCareInfo;
-    }
-
-    trigger() {
-        document.getElementById('thanks').innerHTML = "Thanks for your feedback!";
+        else
+        {
+            alert(alertText);            
+        }        
     }
 }
