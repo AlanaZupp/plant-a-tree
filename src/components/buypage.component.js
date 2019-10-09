@@ -119,16 +119,19 @@ export default class BuyPage extends Component {
         if(result == "Mount Eden"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + eden + "'target ='popup'>445 Mount Eden Road, Mount Eden, Auckland, 1024. </a>" + "<br/>" + edenPh ;
             hasAddressDetails = true;
+            hasShippingType = true;
         }
 
         if(result == "East Tamaki"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + easttam + "'target ='popup'>29 Kerwyn Avenue, East Tamaki, Auckland, 2013. </a>" + "<br/>" + eastPh ;
             hasAddressDetails = true;
+            hasShippingType = true;
         }
 
         if(result == "Albany"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + albany + "'target ='popup'>67 Kell Drive, Albany, Auckland 0632. </a>" + "<br/>" + albanyPh ;
             hasAddressDetails = true;
+            hasShippingType = true;
         }
 
         if(result == "No option selected"){
