@@ -46,7 +46,6 @@ export default class Tree extends React.Component {
         "<br/><b>Growth Rate: </b>"+this.state.gRate+
         "<br/><b>Price: $</b><span>"+this.state.price+"</span>"+ 
         "<br/><img src='"+this.state.pic+"' width='150' height='150'/><br/><br/>"+
-        "<button class='' id='subButt'>Add To Cart</button>"+
         "</div>";
         return string;
     }
