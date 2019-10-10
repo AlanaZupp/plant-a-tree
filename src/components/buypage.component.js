@@ -194,7 +194,7 @@ export default class BuyPage extends Component {
                     </div>
                     <button type="button" id="buyButt" onClick={this.purchaseAction} data-toggle="modal" data-target={"#purchaseModal"}>Confirm Purchase</button>
                 </div> <br/> <br/>
-            <div className="infoDiv">
+            <div align="center" className="col-xs-12 col-md-4 col-lg-4 infoDiv">
             <h6 align= "center">PERSONAL INFORMATION</h6><br></br>
                 <form id = "personal">
                     <label>First Name: *</label>
@@ -219,7 +219,7 @@ export default class BuyPage extends Component {
                 </form>
             </div>  
             <br></br>     
-            <div className= "deliveryDiv">
+            <div align="center" className="col-xs-12 col-md-4 col-lg-4 deliveryDiv">
              <h6 align = "center">CHOOSE DELIVERY METHOD</h6>
                 <Tabs defaultActiveKey="delivery" id="delivery-method">
                 <Tab eventKey="delivery" title="Delivery" id="del">
@@ -296,7 +296,7 @@ export default class BuyPage extends Component {
                
             </div>
             <br></br>
-            <div className = "rating">
+            <div align="center" className="col-xs-12 col-md-4 col-lg-4 rating">
                 <h6 align = "center">RATE OUR SERVICE</h6>
                 <p>Help provide the company with feedback by rating our service!</p>
                 <br></br>
