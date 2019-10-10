@@ -1,24 +1,47 @@
-.searchBar{
+.searchBar {
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left:1%;
+    padding-left: 1%;
     padding-right: 1%;
     background-color: rgb(204, 255, 128);
 }
+
 .search {
     float: right;
 }
 
-p{
+p {
     float: left;
     font-size: 16px;
     color: black;
 }
 
-.container{
+.container {
     margin-top: 1%;
 }
 
-#subButt{
+#subButt {
     background-color: rgb(204, 255, 128);
+}
+
+.tree_info {
+    padding-right: .5rem!important;
+    padding-left: .5rem!important;
+    padding-bottom: 1.5rem!important;
+    max-width: 25rem;
+    margin-bottom: 30px;
+    border-radius: .5rem;
+}
+
+#searchButt{
+    background-color: rgb(255, 255, 255);
+}
+
+.cart-img {
+    max-width: 64px;
+    height: auto;
+}
+
+.tree_img {
+    max-width: 150px;
 }

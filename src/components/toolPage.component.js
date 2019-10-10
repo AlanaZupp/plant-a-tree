@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { trees } from "./tree.js";
+import { tools } from "./tool.js";
 import './homepage.css';
 import "./searchpage.css";
 
-export default class TreeInfo extends Component {
+export default class ToolInfo extends Component {
     constructor() {
         super();
 
         this.state = {
-            tree: trees[0]
+            tool: tools[0]
         }
     }
     render() {
@@ -19,7 +19,7 @@ export default class TreeInfo extends Component {
                 <div className="container treeList" id="treeList">
                     <div className="row">
                         {
-                            trees.map(tree => (
+                            tools.map(tree => (
                                 tree.modal_display()
                             ))
                         }
