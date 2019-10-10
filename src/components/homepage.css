@@ -17,3 +17,67 @@
     padding-top: 2%;
     padding-right: 2%;
   }
+
+  .purchaseItemList{
+    text-align: center;
+  }
+
+  .purchaseTotal{
+    text-align: center;
+  }
+
+  .infoDiv{
+    text-align: center;
+    width: 700px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: auto ;
+  }
+
+.deliveryDiv{
+  text-align: center;
+  width: 700px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: auto;
+}
+
+.rating{
+  text-align: center;
+  width: 700px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: auto ;
+}
+
+#autocomplete
+{
+  width:300px;
+}
+#pickupButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+
+}
+
+#addressButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+}
+
+#buyButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+}
+
+#shippingButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+
+}
+
+#infoButt{
+  background-color: rgb(204, 255, 128);
+  float: center;
+
+}
