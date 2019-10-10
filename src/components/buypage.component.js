@@ -59,7 +59,7 @@ export default class BuyPage extends Component {
         if (!Number(this.state.postcode)) {
             alert("Your postcode must must consist of numbers only");
         }
-        else if(this.state.add1 && this.state.city && this.state.region && this.state.postcode != ""){
+        else if(this.state.add1 && this.state.city && this.state.region && this.state.postcode !== ""){
 
         document.getElementById('addressValidation').innerHTML = "<b> "+ "Is this the correct address?" + "</b>" + "</br>" + this.state.add1 +"</br>"+ this.state.add2 +
         "</br>"+ this.state.city+ ", " + this.state.region + ", " + this.state.postcode;
@@ -85,7 +85,7 @@ export default class BuyPage extends Component {
         if (!Number(this.state.phonenum)) {
             alert("Your phone number must consist of numbers only");
         }
-        else if(this.state.fname && this.state.lname && this.state.phonenum != ""){
+        else if(this.state.fname && this.state.lname && this.state.phonenum !== ""){
 
         document.getElementById('personalConfirm').innerHTML = "<b> "+ "Is this the correct information?" + "</b>" + "</br>Name: " + this.state.fname +" "+ this.state.lname +
         "</br>Phone: "+ this.state.phonenum;
@@ -116,25 +116,25 @@ export default class BuyPage extends Component {
         var albanyPh = " Contact ph: Chris Wilson (09) 789 1458";
 
 
-        if(result == "Mount Eden"){
+        if(result === "Mount Eden"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + eden + "'target ='popup'>445 Mount Eden Road, Mount Eden, Auckland, 1024. </a>" + "<br/>" + edenPh ;
             hasAddressDetails = true;
             hasShippingType = true;
         }
 
-        if(result == "East Tamaki"){
+        if(result === "East Tamaki"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + easttam + "'target ='popup'>29 Kerwyn Avenue, East Tamaki, Auckland, 2013. </a>" + "<br/>" + eastPh ;
             hasAddressDetails = true;
             hasShippingType = true;
         }
 
-        if(result == "Albany"){
+        if(result === "Albany"){
             document.getElementById('print').innerHTML = "The address is: </br>" + "<a href = '" + albany + "'target ='popup'>67 Kell Drive, Albany, Auckland 0632. </a>" + "<br/>" + albanyPh ;
             hasAddressDetails = true;
             hasShippingType = true;
         }
 
-        if(result == "No option selected"){
+        if(result === "No option selected"){
             document.getElementById('print').innerHTML = "Select your nearest branch!"; 
             
         }
@@ -166,7 +166,7 @@ export default class BuyPage extends Component {
             
         }
 
-        if(result == "No option selected"){
+        if(result === "No option selected"){
             document.getElementById('printShipping').innerHTML = "Select your address type!"; 
             
         }
@@ -179,11 +179,9 @@ export default class BuyPage extends Component {
     render() {
         return (
             <div className="fullPage">
-                <div className="searchBar">
-                    <p>Store</p>
-                </div>
+                <div className="searchBar"></div>
 
-                <div id="paymentDiv">
+                <div align="center" id="paymentDiv">
                     <h3 align="center">YOUR PURCHASE</h3><br />
 
                     <div id="purchaseItemList">
@@ -195,7 +193,7 @@ export default class BuyPage extends Component {
                         </div>
                     </div>
                     <button type="button" id="buyButt" onClick={this.purchaseAction} data-toggle="modal" data-target={"#purchaseModal"}>Confirm Purchase</button>
-                </div>
+                </div> <br/> <br/>
             <div className="infoDiv">
             <h6 align= "center">PERSONAL INFORMATION</h6><br></br>
                 <form id = "personal">
@@ -385,7 +383,7 @@ export default class BuyPage extends Component {
             treeCareInfo = "";
             const items = document.getElementsByClassName("purchaseItem");
 
-            if(items.length != 0){
+            if(items.length !== 0){
                 treeCareInfo += "<strong>Here are some Helpful Hints on Caring for your Trees and Tools!</strong><br/><br/>";
             }
 

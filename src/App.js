@@ -58,11 +58,11 @@ class App extends Component {
                     </Nav.Item>     
 
                     <Nav.Item>
-                      <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Store</NavLink></Nav.Link>   
+                      <Nav.Link><NavLink className="nav-link" to="/search" activeClassName="current">Search</NavLink></Nav.Link>   
                     </Nav.Item>  
           
                     <Nav.Item>
-                      <Nav.Link><NavLink className="nav-link" to="/treeinfo" activeClassName="current">Tree Info</NavLink></Nav.Link>   
+                      <Nav.Link><NavLink className="nav-link" to="/treeinfo" activeClassName="current">Trees</NavLink></Nav.Link>   
                     </Nav.Item> 
 
                     <Nav.Item>
