@@ -35,7 +35,6 @@ export default class Tree extends React.Component {
 
     result_string()
     {        
-        //removed class button, cartButton as it crashing when reading this string
         var string = "<div class='TreeObj'>"+
         "<u><b>"+this.state.name+"</b></u><br/>"+
         "<b>Category: </b>"+this.state.category+
